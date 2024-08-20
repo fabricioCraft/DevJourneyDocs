@@ -239,6 +239,8 @@ Disciplina muito próxima do Design UX que cuida da experiência do consumidor e
 
 ### Configuração do site
 
+``` Configuração do site
+
 <!DOCTYPE html> <!--Indica que estamos tabalhando com html 5-->
 <html lang="en"> <!--Define a linguagem do site-->
 <head> 
@@ -247,7 +249,13 @@ Disciplina muito próxima do Design UX que cuida da experiência do consumidor e
     <title>Meu primeiro exercício</title> <!--Título do site-->
 </head>
 
+```
+
+
+
 ### Conteudo do site
+
+``` Conteúdo do site
 <body>
     <h1>Olá Mundo!</h1>
     <hr>
@@ -257,10 +265,12 @@ Disciplina muito próxima do Design UX que cuida da experiência do consumidor e
 </body>
 </html>
 
+```
+
 
 ## Tags
-<h1></h1> Título de nível 1
-<hr> Cria uma linha horizontal
+```<h1></h1>``` Título de nível 1
+```<hr>``` Cria uma linha horizontal
 
 ### Paragrafos e Quebras
 <br> Quebra a linha
