@@ -62,6 +62,10 @@
         - [Colocação de Tags de forma produtiva](#colocação-de-tags-de-forma-produtiva)
         - [Formatações adicionais em HTML](#formatações-adicionais-em-html)
         - [Citações e Códigos](#citações-e-códigos)
+        - [Listas](#listas)
+            - [Ordenadas](#ordenadas)
+            - [Não Ordenadas](#não-ordenadas)`
+            - [Listas de Definições](#listas-de-definições)
 
 # Glossario
 
@@ -239,7 +243,7 @@ Disciplina muito próxima do Design UX que cuida da experiência do consumidor e
 
 ### Configuração do site
 
-``` Configuração do site
+```
 
 <!DOCTYPE html> <!--Indica que estamos tabalhando com html 5-->
 <html lang="en"> <!--Define a linguagem do site-->
@@ -255,7 +259,7 @@ Disciplina muito próxima do Design UX que cuida da experiência do consumidor e
 
 ### Conteudo do site
 
-``` Conteúdo do site
+```
 <body>
     <h1>Olá Mundo!</h1>
     <hr>
@@ -348,8 +352,11 @@ São titulos e subtítulos para organização do texto, indo de h1 até h6.
 O HTML5  é focado no significado, ou seja, no conteúdo do site. A forma ou estilo do site é de responsabilidade do CSS3.
 
 ### Negrito e Itálico do jeito certo
-<strong></strong> Negrito
-<em></em> Itálico
+
+```html
+<strong></strong> <!--Negrito-->
+<em></em> <!--Itálico-->
+```
 
 ### Colocação de Tags de forma produtiva
 
@@ -364,18 +371,85 @@ Para colocar tags no meio de um texto de forma produtiva:
     Passo 4 - Digite a tag que deseje.
 
 ### Formatações adicionais em HTML
-<mark></mark> Marcador de texto.
-<small></small> Faz a letra ficar pequena.
-<del></del> Marca o texto como excluído.
-<ins><ins> Marca o texto como inserido (Sublina o texto).
-<sup></sup> Sobrescreve o texto (Coloca parte do texto mais acima).
-<sub></sub> Subescreve o texto (Coloca parte do texto mais abaixo). 
+
+
+```html
+<mark></mark> <!--Marcador de texto.-->
+<small></small> <!--Faz a letra ficar pequena.-->
+<del></del> <!--Marca o texto como excluído.-->
+<ins><ins> <!--Marca o texto como inserido (Sublina o texto).-->
+<sup></sup> <!--Sobrescreve o texto (Coloca parte do texto mais acima).-->
+<sub></sub> <!--Subescreve o texto (Coloca parte do texto mais abaixo).--> 
+```
 
 ### Citações e Códigos
-<code></code> Usado para imprimir na tela web um código.
-<pre></pre> Usado para identar o código impresso na tela da mesma maneira como está no código desenvolvido.
-<q></q> Usado para citação de frase, coloca aspas ("") na frase citada.
-<blockquote></blockquote> Usado para citação de um bloco completa, tem uma quebra de linhas e um desolocamento horizontal do bloco citação. (Normalmente usado em parágrafos ou fases com mais de uma linha).
-<abbr title="Nome completo">Palavra abreviada<abbr> Usado para abreviações no texto. Quando o usuário passa o mouse em cima ele informa o que a sigla significa.
-<bdo><bdo> Mostra o texto invertido, de trás para frente.
 
+```html
+<code></code> <!--Usado para imprimir na tela web um código.-->
+<pre></pre> <!--Usado para identar o código impresso na tela da mesma maneira como está no código desenvolvido.-->
+<q></q> <!--Usado para citação de frase, coloca aspas ("") na frase citada.-->
+<blockquote></blockquote> <!--Usado para citação de um bloco completa, tem uma quebra de linhas e um desolocamento horizontal do bloco citação. (Normalmente usado em parágrafos ou fases com mais de uma linha).-->
+<abbr title="Nome completo"><!--Palavra abreviada<abbr> Usado para abreviações no texto. Quando o usuário passa o mouse em cima ele informa o que a sigla significa.-->
+<bdo><bdo> <!--Mostra o texto invertido, de trás para frente.-->
+```
+
+## Listas
+
+### Ordenadas
+
+As listas ordenadas são aquelas enuremadas fazendo a contagem do primeiro elemento da lista até o último.
+
+``` html
+
+<ol type="1"></ol>
+<ol type="A"></ol>
+<ol type="a"></ol>
+<ol type="I"></ol>
+<ol type="i"></ol>
+
+<!--Exemplo:-->
+
+<ol type="1">
+    <li>Acordar</li>
+    <li>Ligar para o João</li>
+    <li>Tomar café</li>
+    <li>Escovar os dentes</li>
+
+</ol>
+
+/*Elas podem ser do tipo: 1, A, a, I e i.*/
+
+```
+
+### Não Ordenadas
+
+As listas não ordenadas são aquelas que não seguem uma ordem.
+
+``` html
+<ul type = "disc"></ul>
+<ul type = "circle"></ul>
+<ul type = "square"></ul>
+
+<!--Exemplo:-->
+
+<ul type="disc">
+        <li>Pão</li>
+        <li>Leite</li>
+        <li>Tomate</li>
+        <li>Manteiga</li>
+        <li>Arroz</li>
+        <li>Feijão</li>
+    </ul>
+
+```
+
+### Listas de Definições
+
+As listas de definições são usadas como se fosse um dicionário com termos e descrição desses termos.
+
+```html
+<dl>
+    <dt>HTML</dt> <!--Definição de termo-->
+    <dd>Linguagem de marcação para a criação de um site.</dd> <!--Definição de descrição-->
+</dl>
+```
