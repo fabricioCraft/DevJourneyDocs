@@ -389,7 +389,7 @@ Para colocar tags no meio de um texto de forma produtiva:
 <pre></pre> <!--Usado para identar o código impresso na tela da mesma maneira como está no código desenvolvido.-->
 <q></q> <!--Usado para citação de frase, coloca aspas ("") na frase citada.-->
 <blockquote></blockquote> <!--Usado para citação de um bloco completa, tem uma quebra de linhas e um desolocamento horizontal do bloco citação. (Normalmente usado em parágrafos ou fases com mais de uma linha).-->
-<abbr title="Nome completo"><!--Palavra abreviada<abbr> Usado para abreviações no texto. Quando o usuário passa o mouse em cima ele informa o que a sigla significa.-->
+<abbr title="Nome completo da palavra">Palavra abreviada<abbr> <!--Usado para abreviações no texto. Quando o usuário passa o mouse em cima ele informa o que a sigla significa.-->
 <bdo><bdo> <!--Mostra o texto invertido, de trás para frente.-->
 ```
 
