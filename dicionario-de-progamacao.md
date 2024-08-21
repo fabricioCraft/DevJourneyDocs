@@ -53,6 +53,8 @@ Qualidade de interfaces que são acessíveis a pessoas portadoras de deficiênci
 
 É um passo a passo para resolver um problema. Uma sequência finita de ações executáveis que visa obter uma solução para um determinado tipo de problema.
 
+### Linguagens de alto e baixo níveis
+
 ![Linguagens de alto e baixo níveis](./images/Linguagens%20de%20alto%20e%20baixo%20níveis.JPG)
 
 ## API
