@@ -336,8 +336,8 @@ O tamanho da imagem é importante para a velocidade do site. Imagens grandes dei
 Para gerar o favicon, é melhor e mais compatível gerar com a extensão .ico.
 
  - sites para gerar o favicon:
-    [!](https://www.iconarchive.com/)
-    [!](https://favicon.io/)
+    [icon archive](https://www.iconarchive.com/)
+    [favicon](https://favicon.io/)
 
 ### Hieraquia de Titulos
 São titulos e subtítulos para organização do texto, indo de h1 até h6.
