@@ -53,6 +53,8 @@ Qualidade de interfaces que são acessíveis a pessoas portadoras de deficiênci
 
 É um passo a passo para resolver um problema. Uma sequência finita de ações executáveis que visa obter uma solução para um determinado tipo de problema.
 
+![Linguagens de alto e baixo níveis](./images/Linguagens%20de%20alto%20e%20baixo%20níveis.JPG)
+
 ## API
 
 É uma abreviação de Application Programming Interface, ou Interface de Programação de Aplicativos. APIs são serviços desenvolvidos e disponibilizados para que um ou mais produtos de software acessem e utilizem suas funcionalidades. Exemplo: Google Maps.
