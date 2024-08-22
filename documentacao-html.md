@@ -26,6 +26,10 @@
             - [Links e Âncoras](#links-e-âncoras)
             - [Links Internos](#links-internos)
             - [Links para download](#links-para-download)
+        - [Mídias](#mídias)
+            -[Imagens Dinãmicas](#imagens-dinâmicas)
+            - [Colocando áudio no site](#colocando-audio-no-site)
+            - [Vídeo em hospedagem própria](#video-em-hospedagem-própria)
 
 # HTML
 
@@ -312,4 +316,60 @@ Alguns media types bem usados no dia-a-dia:
 
 ```html
 <a href="exemplo.pdf" download ="exemplo.pdf" type="application/pdf">Baixar livro em PDF</a>
+```
+## Mídias
+
+### Imagens Dinâmicas
+
+Seu site deve se adaptar ao tamanho da tela do dispositivo em que estiver utilizando.
+
+**Cuidado:** Sites lentos diminuem a taxa de retenção dos usuários, que ficam menos tempo no seu site, prejudicando a indexação da sua página no mecanismo de busca do google.
+
+A tag ```<source>``` possui três atributos:
+- type que vai indicar o media type da imagem que usamos.
+- srcset que vai configurar o nome da imagem que será carregada quando o tamanho for atingido.
+- media que indica o tamanho máximo a ser considerado para carregar a imagem indicada.
+
+***Atenção:** Existem uma ordem entre os ```<source>``` que deve ser respeitada e na configuração do exemplo abaixo, os itens mais acima devem ser os de menores tamanhos para o max-width e que os seguintes sejam maiores, de forma crescente.
+
+```html
+    <picture>
+        <source media="(max-width:750px )" srcset="./imagens/foto-p.png">
+        <source media="(max-width:1050px )" srcset="./imagens/foto-m.png" type="image/png">
+        <img src="./imagens/foto-g.png" alt="Imagem flexível">
+    </picture>
+```
+### Colocando audio no site
+
+Existe basicamente duas maneiras de colocar audio no seu site, como descritas nos exemplos abaixo:
+
+No primeiro exemplo, você pode colocar o áudio diretamente na tag ```<audio>```.
+
+No segundo exemplo, você pode colocar os ```<source>```
+dentro da tag ```<audio>``` e então colocar os tipos de áudios. Caso o navegador não consiga acessar um arquivo ele tentará acessar o outro e assim sucessivamente.
+
+- O parâmetro **autoplay** faz com que o áudio comece a tocar.
+- O parâmetro **controls** faz com que o áudio apareça na página e seja possível pausar e dar play no áudio.
+- O parâmetro **loop** faz com que o áudio volte ao início quando ele chegar ao fim, ou seja, continua tocando em loop.
+
+```html
+    <!--Exemplo 1-->
+    <audio src="./midia/east-west.mp3" autoplay ></audio>
+    <!--Exemplo 2-->
+    <audio preload="auto"  autoplay controls loop>
+        <source src="./midia/east-west.mp3" type="audio/mpeg">
+    </audio>
+```
+### Video em hospedagem própria
+
+Para colocar vídeos no site, é a mesma ideia do áudio.
+
+- O parâmetro **poster** coloca uma capa no vídeo.
+
+```html
+    <video poster = "./imagens.jpg" auplay controls>
+        <source src="./midia/meu-video.mp4" type="video/mp4">
+        <source src="./midia/meu-video.mp4.m4v" type="video/mp4">
+        <source src="./midia/meu-video.webm" type="video/mp4">
+    </video>
 ```
