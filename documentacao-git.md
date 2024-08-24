@@ -14,7 +14,15 @@
 - [Git remote add origin](#git-remote-add-origin)
 - [Git pull](#git-pull)
 
+## Antes de passar qualquer comando git pela primeira vez, faça isso.
 
+Configure o seu nome de usuário e endereço de e-mail globalmente no Git para garantir que todos os commits que você realizar tenham essas informações corretas e para linkar o repositório local ao repositório remoto.
+
+```bash
+git config --global user.name "Seu Nome"
+git config --global user.email "seuemail@example.com"
+
+```
 
 ## Branch
 Branches (ramificações) são utilizadas no Git para criar linhas de desenvolvimento paralelas. 
@@ -44,10 +52,22 @@ git checkout -b nome-da-nova branch
 ```
 ## Git push
 
+O comando `git push` no Git é utilizado para enviar, ou "empurrar", as alterações do repositório local para o repositório remoto. Ao executar o `git push`, você está enviando os commits que foram feitos no seu repositório local para o repositório remoto, mantendo assim ambos sincronizados.
 
+É importante realizar o `git push` após ter realizado alterações locais e feito commits para garantir que as atualizações feitas por você estejam disponíveis para os outros colaboradores do projeto no repositório remoto. Dessa forma, você contribui para o progresso do projeto e disponibiliza as suas alterações para que a equipe possa trabalhar com base nelas.
+
+O `git push` é uma ação fundamental no fluxo de trabalho com o Git, pois permite que você compartilhe o seu trabalho e colabore de forma eficiente com os demais membros da equipe. Certifique-se de estar com o repositório local atualizado e sem conflitos antes de realizar o `git push` para evitar possíveis problemas de integração com o repositório remoto.
+
+Use esse código na primeira vez que estiver dando um push no repositório
 ```bash
 git push origin nome-da-branch
 ```
+Caso não seja a primeira vez que esteja dando o push, você pode usar o seguinte comando.
+
+```bash
+git push
+```
+
 Caso tenha mais de uma branch e queira fazer um `push` pro GitHub, é necessário passar o comando abaixo para transformar todas as branchs em rastreáveis para que seja aceito.
 
 ``` bash
