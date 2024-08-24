@@ -153,7 +153,7 @@ git commit -m "descricao-do-que-foi-alterado"
 ```
 
 Você pode utilizar o site abaixo para realizar commits semânticos e padronizá-los. (Verifique a especificação do site.)
-[Conventional Commits]("https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/") 
+![Conventional Commits]("https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/") 
 
 ## Git restore
 
