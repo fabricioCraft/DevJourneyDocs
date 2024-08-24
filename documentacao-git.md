@@ -1,6 +1,7 @@
 # Desmitificando Git
 
 ## Sumário
+- [Primeira vez dando comando git? Faça isso primeiro.](#primeira-vez-dando-comando-git-faça-isso-primeiro)
 - [Branch](#branch)
 - [Mudança de Branch](#mudança-de-branch)
 - [Git push](#git-push)
@@ -14,7 +15,7 @@
 - [Git remote add origin](#git-remote-add-origin)
 - [Git pull](#git-pull)
 
-## Antes de passar qualquer comando git pela primeira vez, faça isso.
+## Primeira vez dando comando git? Faça isso primeiro.
 
 Configure o seu nome de usuário e endereço de e-mail globalmente no Git para garantir que todos os commits que você realizar tenham essas informações corretas e para linkar o repositório local ao repositório remoto.
 
