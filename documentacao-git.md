@@ -1,5 +1,7 @@
 # Desmitificando Git
 
+Permite que desenvolvedores controlem as alterações realizadas no código-fonte de um projeto, facilitando a colaboração entre membros da equipe, o gerenciamento de versões e o rastreamento de alterações.
+
 ## Sumário
 - [Primeira vez dando comando git? Faça isso primeiro.](#primeira-vez-dando-comando-git-faça-isso-primeiro)
 - [Branch](#branch)
@@ -14,6 +16,7 @@
 - [Git log](#git-log)
 - [Git remote add origin](#git-remote-add-origin)
 - [Git pull](#git-pull)
+- [Fork](#fork)
 
 ## Primeira vez dando comando git? Faça isso primeiro.
 
@@ -217,3 +220,11 @@ git pull
 ```
 
 [def]: "https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/"
+
+## Fork
+
+O comando "fork" no Git é utilizado para criar uma cópia de um repositório existente em sua própria conta do GitHub. Isso é útil quando você deseja contribuir para um projeto open source ou simplesmente ter uma versão do projeto para trabalhar sem interferir no repositório original. 
+
+Para fazer um "fork" de um repositório, basta acessar o repositório desejado no GitHub e clicar no botão "Fork" no canto superior direito da página. Isso fará uma cópia do repositório para a sua conta, onde você pode modificá-lo e trabalhar nele como quiser.
+
+É uma prática comum fazer um "fork" de um repositório, fazer as alterações desejadas e então enviar um "pull request" para o repositório original para que as suas modificações sejam consideradas para inclusão no projeto principal.
