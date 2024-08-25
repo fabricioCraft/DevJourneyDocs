@@ -3,10 +3,13 @@
 - [Utilidade do node.js](#utilidade-do-nodejs)
 - [NPM](#npm)
     - [NPM init](#npm-init)
+- [Require x Import](#require-x-import)
+- [Biblioteca Externa](#biblioteca-externa)
+- [Biblioteca de desenvolvimento x produção](#biblioteca-de-desenvolvimento-x-produção)
 
 
 
-## Utilidade do node.js
+# Utilidade do node.js
 
 O node.js permite que os desenvolvedores utilizem JavaScript para programar no lado do servidor, ampliando as possibilidades de uso da linguagem para além do ambiente do navegador.
 
@@ -45,3 +48,51 @@ Caso queira marcar todas as perguntas como padrão e responder "sim" para todas 
 ```bash
 npm init -y
 ```
+
+# Require x Import
+
+Em JavaScript, `import` e `require` são utilizados para trazer funcionalidades de módulos externos para o seu código, porém cada um é utilizado em um contexto diferente.
+
+- `require`: É uma função utilizada em ambientes que suportam o sistema de módulos CommonJS, como o Node.js. Com `require`, você pode trazer módulos para o seu código de forma síncrona.
+
+- `import`: É uma declaração do ECMAScript 6 utilizada em ambientes que suportam o sistema de módulos ES6, como os navegadores modernos com suporte a módulos. Com `import`, você pode trazer módulos para o seu código de forma assíncrona e também possui suporte a importações nomeadas.
+
+Um exemplo de uso do `require` em Node.js é trazer o módulo `fs` para manipulação de arquivos:
+
+```javascript
+const fs = require('fs');
+```
+
+Já um exemplo de uso do `import` em um arquivo JavaScript com suporte a módulos ES6 poderia ser:
+
+```javascript
+import { nomeDaFuncao } from './meuModulo.js';
+```
+
+Em resumo, `require` é utilizado em ambientes CommonJS, como Node.js, enquanto `import` é utilizado em ambientes ES6, como navegadores modernos com suporte a módulos. A escolha entre um ou outro depende do ambiente em que está desenvolvendo e das especificações de módulos que está utilizando em seu projeto.
+
+# Biblioteca Externa
+
+Para fazer a instalação de uma biblioteca externa em um projeto JavaScript, você pode utilizar o Node Package Manager (NPM) no caso de um projeto Node.js. Primeiramente, é importante ter o Node.js instalado na sua máquina. 
+
+Para instalar uma biblioteca, você pode utilizar o comando `npm install nome-da-biblioteca`. Por exemplo, se você quer instalar o pacote `axios` para fazer requisições HTTP em seu projeto, você pode executar o seguinte comando no terminal:
+
+```bash
+npm install axios
+```
+
+Isso vai baixar a biblioteca `axios` e adicioná-la como uma dependência no arquivo `package.json` do seu projeto.
+
+Após a instalação, você pode utilizar a biblioteca em seu código importando-a com `require` (em ambientes CommonJS) ou `import` (em ambientes ES6).
+
+Lembre-se de que é importante verificar a documentação da biblioteca que você está instalando para entender como utilizá-la corretamente em seu projeto e quais dependências ela pode ter.
+
+Por fim, é sempre recomendado manter um arquivo `package.json` atualizado com todas as dependências do seu projeto, facilitando a gestão das bibliotecas instaladas e suas versões.
+
+# Biblioteca de desenvolvimento x produção
+
+As bibliotecas de desenvolvimento são aquelas utilizadas durante o desenvolvimento da aplicação, como ferramentas para testes, linters, entre outras. Elas não são essenciais para o funcionamento da aplicação em produção, por isso são instaladas com a flag "-D" quando utilizamos o npm, como por exemplo: `npm install -D nome_da_biblioteca`.
+
+Já as bibliotecas de produção são aquelas necessárias para o funcionamento correto da aplicação em ambiente de produção. Elas são as dependências principais do projeto e devem ser instaladas sem a flag "-D", apenas com `npm install nome_da_biblioteca`.
+
+Um exemplo prático seria a instalação do framework Express em uma aplicação Node.js. Se estamos desenvolvendo a aplicação e precisamos utilizar o Express apenas durante o desenvolvimento, podemos instalá-lo como biblioteca de desenvolvimento. Já se o Express é essencial para o funcionamento da aplicação em produção, ele deve ser instalado como uma biblioteca de produção.
