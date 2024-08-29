@@ -13,7 +13,7 @@
     - [Backend](#backend)
     - [Backlog](#backlog)
     - [Backup](#backup)
-    - [Bemchmarking](#benchmarking)
+    - [Benchmarking](#benchmarking)
     - [Bit](#bit)
     - [BMC](#bmc)
     - [Botão Checkbox](#botão-checkbox)
@@ -42,6 +42,45 @@
     - [CRC](#crc)
     - [CSS](#css)
     - [Customer Experience (CX)](#customer-experience-cx)
+    - [Daily (SCRUM)](#daily-scrum)
+    - [Dashboard](#dashboard)
+    - [Dar Push](#dar-push)
+    - [Dar Pull](#dar-pull)
+    - [Debugar](#debugar)
+    - [Dev](#dev)
+    - [DEVOPS](#devops)
+    - [Design Adaptativo](#design-adaptativo)
+    - [Design Centrado no Usuário (UCD)](#design-centrado-no-usuário-ucd)
+    - [Design de Interação](#design-de-interação)
+    - [Design Ideation](#design-ideation)
+    - [Design Responsivo](#design-responsivo)
+    - [Design Review](#design-review)
+    - [Design System](#design-system)
+    - [Design Thinkin](#design-thinking)
+    - [Design de Afinidade](#design-de-afinidade)
+    - [Diretório](#diretório)
+    - [DNS Domain Name System](#dns-domain-name-system)
+    - [DAU](#dau)
+    - [Discovery](#discovery)
+    - [Dor (do usuário)](#dor-do-usuário)
+    - [Early Adopters](#early-adopters)
+    - [Encontrabilidade](#encontrabilidade)
+    - [Épico](#épico)
+    - [Esocpo](#escopo)
+    - [Experiência Omnichannel](#experiência-omnichannel)
+    - [Fazer deploy](#fazser-deploy)
+    - [Flat Design](#flat-design)
+    - [Flywheel](#flywheel)
+    - [Framework](#framework)
+    - [Frontend](#frontend)
+    - [Fullstack](#fullstack)
+    - [Git](#git)
+    - [GMV](#gmv)
+    - [Go-to-market](#go-to-market)
+    - [Growth](#growth)
+    
+
+
 
 # Glossario
 
@@ -214,3 +253,148 @@ CSS (Cascading Styles Sheet) é uma “folha de estilo” utilizada para definir
 ## Customer Experience (CX)
 
 Disciplina muito próxima do Design UX que cuida da experiência do consumidor em toda a sua jornada de compra.
+
+## Daily (SCRUM)
+
+Reunião diária que corresponde a um dos rituais do Scrum com, no máximo, 15 minutos de duração, para acompanhar o andamento dos processos – o que foi feito e o que precisa ser colocado em prática naquele projeto - e se existem impedimentos para colocar em prática o que deve ser feito.
+
+## Dashboard
+
+Painel que centraliza uma série de informações, como indicadores e métricas. É muito útil no meio empresarial, já que é projetado para ser atualizado em tempo real e de forma automática.
+
+## Dar Push
+
+Enviar as alterações já commitadas (ver significado) do seu repositório local para um repositório remoto.
+
+## Dar Pull
+
+Fazer download das alterações em determinada branch (ver significado) num repositório remoto em seu repositório local.
+
+## Debugar
+
+Procurar por erros no código, analisando entradas e saídas.
+
+## Dev
+
+Abreviação de developer (do inglês). Pessoa desenvolvedora, programadora.
+
+## DEVOPS
+
+Ferramenta que promove a integração e comunicação entre desenvolvedores de softwares e a equipe de infraestrutura (TI).
+
+## Design Adaptativo
+
+Técnica através da qual são criados layouts diferentes para cada tipo de dispositivo (mobile, desktop, etc). Diferentemente do Design Responsivo, em cada dispositivo é carregado o layout apropriado para aquele tamanho específico de tela.
+
+## Design centrado no Usuário (UCD)
+
+É uma estrutura de processos que coloca o consumidor e as suas necessidades no centro de cada uma das fases do Design.
+
+## Design de Interação
+
+Área responsável por estudar, planejar e aplicar os pontos de interação entre o usuário e a interface.
+
+## Design Ideation
+
+Processo criativo através do qual os designers externalizam ideias em sessões, que podem ser de brainstorm, por exemplo. A ideia é produzir a quantidade máxima de ideias possíveis.
+
+## Design Responsivo
+
+Técnica através da qual o design de uma interface se ajusta automaticamente à tela do dispositivo utilizado pelo usuário, de forma fluida.
+
+## Design Review
+
+Prática que consiste em avaliar um projeto de Design e colher feedback, com o intuito de verificar se ele atende aos seus objetivos
+
+## Design System
+
+Um ecossistema de bibliotecas que contêm uma grande variedade de princípios e padrões de Design a serem seguidos; é utilizado como parâmetro para outros produtos.
+
+## Design Thinking
+
+Abordagem segundo a qual o público-alvo e todos os interessados são colocados no centro do produto/serviço, de forma que é buscada uma solução mais completa dos problemas. Com o Design Thinking busca-se inovar.
+
+
+## Design de Afinidade
+
+Método utilizado para organizar e agrupar afinidades e características de um determinado tópico. Muitas vezes feito utilizando post-its.
+
+## Diretório
+
+Também conhecida como pasta. Se trata de uma estrutura utilizada para organizar arquivos no computador.
+
+## DNS (Domain Name System)
+
+DSN significa Sistema de Nomes e Domínios. Se trata de um sistema responsável por localizar e traduzir para números IP os endereços dos sites que digitamos nos navegadores. Ele irá reconhecer seus números de IP para fazer uma conexão. Devido ao DNS pode-se, por exemplo, digitar na barra de endereços do navegador ‘www.cubos.academy’ para acessar o site ao invés de um monte de números e pontos.
+
+## DAU
+
+Daily Active Users (usuários ativos diariamente). Métrica que verifica a frequência diária de envolvimento de usuários em sites, softwares e aplicativos.
+
+## Discovery
+
+Etapa do ciclo de desenvolvimento de produto em que é feita a investigação das necessidades do cliente e, consequentemente, dos “Jobs” que serão realizados. Nessa etapa, visamos, segundo Marty Cagan, reduzir riscos inerentes ao produto: o risco de valor, o risco de usabilidade, o risco de viabilidade e o risco de negócio.
+
+## Dor (do usuário)
+
+Problema pelo qual o usuário passa. Pode ser objetivo, mas comumente tem origens muito subjetivas.
+
+## Early Adopters
+
+“Adotantes iniciais” de um novo produto/tecnologia que chega ao mercado, antes de se tornar comum. Geralmente, são os responsáveis pelos feedbacks aos clientes posteriores.
+
+## Encontrabilidade
+
+Presente na Colmeia de UX de Peter Moville, é a característica de uma boa navegação, onde os conteúdos são facilmente localizáveis. A experiência deve permitir acesso a toda a informação e utilidade de forma simples e clara.
+
+## Épico
+
+É uma grande entrega de valor para o usuário que podem ser dividida em pequenas entregas de valor que são conhecidas como user stories.
+
+## Escopo
+
+Todo o trabalho necessário para chegar ao produto final, com as características e funções pré-definidas.
+
+## Experiência Omnichannel
+
+Experiência proporcionada em diversos canais interligados: mundo físico, app, website, redes sociais e outros.
+
+## Fazser deploy
+
+“Subir o código”.  É quando um sistema foi disponibilizado para uso, seja para testes ou produção.
+
+## Flat Design
+
+Estilo de design que tem característica minimalista, objetiva e “clean”. Altamente focado na experiência do usuário.
+
+## Flywheel
+
+Modelo (em forma de roda) que considera a experiência do usuário, liderada pela área de produto. Divide os usuários em 4 segmentos que demandam ações diferentes: avaliadores, iniciantes, regulares e campeões.
+
+## Framework
+
+Trata-se de uma estrutura base, uma espécie de plataforma que contém ferramentas, guias, sistemas e componentes que agilizem o processo de desenvolvimento de soluções, auxiliando os especialistas em seus trabalhos.
+
+## Frontend
+
+Desenvolvedor que trabalha com a parte de aplicação em que o usuário interage diretamente, associado à parte visual de um site ou aplicativo.
+
+## Fullstack
+
+Profissional que tem conhecimento sobre back-end e front-end.
+
+## Git
+
+Sistema de controle de versão de arquivos. Nele é possível que diversas pessoas contribuam simultaneamente editando e criando novos arquivos sem o risco que as alterações sejam sobrescritas.
+
+## GMV
+
+Gross Merchandise Volume, o volume bruto de mercadoria. Indica o total monetário de vendas no comércio digital (e-commerce), em determinado período.
+
+## Go-to-market
+
+Método estratégico que leva em conta o mercado, os consumidores e os produtos já existentes para definir quais novos produtos serão trabalhados.
+
+## Growth
+
+Growth, que vem do inglês “crescimento”, é a estratégia com base na melhora das práticas para melhora dos resultados do negócio, norteada por hipóteses e experimentos. O termo é mais utilizado no âmbito das startups de Tecnologia.
