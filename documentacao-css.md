@@ -1,5 +1,5 @@
 # Sumário
-- [Represando cores com CSS](#representando-cores-com-css)
+- [Representando cores com CSS](#representando-cores-com-css)
 
 ## Representando cores com CSS
 
