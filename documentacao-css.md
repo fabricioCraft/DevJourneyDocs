@@ -107,6 +107,26 @@ Para obter as cores tetrádicas, é necessário traçar um retângulo comprido n
 
 Trabalha somente com uma cor com a mudança de duas características, luminosidade e saturação.
 
+## Gradiente
+
+Para configurar uma cor gradiente em um elemento, é necessário escolher o seletor, que nesse nosso caso é o ``body``, que permite que todo o corpor da página seja configurado de uma mesma forma.
+
+Depois disso, passar a propriedade
+`backgroung-image` que recebe o módulo `linear-gradient` ou `radial-gradient` dependendo da forma que vc deseja usar o gradiente.
+
+Esse módulo leva como primeiro parâmetro a direção para onde a cor gradiente irá se deslocar `to right` ou `to left` ou `to up` ou `to down` ou ainda pode receber ângulos como `45deg`.
+
+No caso do primeiro parâmetro, se optar pelo `radial-gradient`, ele deve ser necessariamente `circle`.
+
+Ainda é possível passar porcentagem depois da cor para indicar o quanto daquela cor irá preencher a tela, por exemplo `#F5EE00 10%`. Isso faz com que a referida cor ocupe 10% da página.
+
+```css
+
+body{
+    background-image: linear-gradient(to right, #F5EE00, #F5BB00, #E800F5, #6200F5,#A09C35);
+}
+
+```
 
 
 
