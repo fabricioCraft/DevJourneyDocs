@@ -8,7 +8,7 @@
     - [Cores Complementares](#cores-complementares)
     - [Cores Análogas](#cores-análogas)
         - [Cores Análogas Relacionadas](#cores-análogas-relacionadas)
-    - [Cores Triádicas](#cores-triádias)
+    - [Cores Triádicas](#cores-triádicas)
     - [Cores Quadráticas](#cores-qudráticas)
     - [Cores Tetrádicas](#cores-tetrádicas)
     - [Monocromia](#monocromia)
@@ -79,25 +79,20 @@ São cores que não tem muito contraste uma com a outra, mas ainda assim são pe
 
 #### Cores Análogas Relacionadas
 
-```html
+![Cores Análogas Relacionadas](./images/cores-analogas-relacionadas.png)
 
-<img href="./images/cores-analogas-relacionadas.png" alt="cores análogas relacionadas">
-```
-### Cores Triádias
+### Cores Triádicas
 
 Combinação de três cores que estão igualmente espaçadas no círculo cromático, formando um triângulo equilátero.
 
-```html
-<img href= "./images/cores-triadicas.webp" alt="cores triadicas">
-```
+![Cores Triádicas](./images/cores-triadicas.webp)
+
 
 ### Cores Qudráticas
 
 É uma harmonia semelhante à harmonia de cores triádicas, exceto que neste esquema harmónico existem quatro cores, todas equidistantes no círculo cromático.
 
-```html
-<img href ="./images/cores-quadraticas.webp" alt="cores quadraticas">
-```
+![Cores Quadráticas](./images/cores-quadraticas.webp)
 
 ### Cores Tetrádicas
 
@@ -105,9 +100,8 @@ Esquema de cores que se caracteriza por uma paelte de quatro cores uniformemente
 
 Para obter as cores tetrádicas, é necessário traçar um retângulo comprido no centro do círculo cromático.
 
-```html
-<img href="./images/cores-tetradicas.png" alt="cores tetradicas">
-```
+![Cores Tetrádicas](./images/cores-tetradicas.png)
+
 
 ### Monocromia
 
