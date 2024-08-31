@@ -78,9 +78,24 @@
     - [GMV](#gmv)
     - [Go-to-market](#go-to-market)
     - [Growth](#growth)
-    
-
-
+    - [Hard Skills](#hard-skills)
+    - [Hardware](#hard-skills)
+    - [HTTPS / HTTP](#https--http-hyper-text-transfer-protocol)
+    - [HEX Color Code](#hex-color-code)
+    - [HSB Color Code](#hsb-color-code)
+    - [HTML](#html)
+    - [Indentação](#indentação)
+    - [Intranet](#intranet)
+    - [Internet](#internet)
+    - [IP (Internet Protocol)](#ip-internet-protocol)
+    - [Iteração](#iteração)
+    - [Iniciativa](#iniciativa)
+    - [Interface](#interface)
+    - [Job Story](#job-story)
+    - [Job To Be Done](#job-to-be-done)
+    - [Job Mapping](#job-mapping)
+    - [Jornada do Usuário](#jornada-do-usuário)
+    - [Kanban](#kanban)
 
 # Glossario
 
@@ -398,3 +413,88 @@ Método estratégico que leva em conta o mercado, os consumidores e os produtos 
 ## Growth
 
 Growth, que vem do inglês “crescimento”, é a estratégia com base na melhora das práticas para melhora dos resultados do negócio, norteada por hipóteses e experimentos. O termo é mais utilizado no âmbito das startups de Tecnologia.
+
+## Hard Skills
+
+Habilidades técnicas, que podem ser mensuradas de forma mais objetiva (diferentemente das Soft Skills).
+
+## Hardware
+
+Refere-se a objetos nos quais você pode realmente tocar, como discos, unidades de disco, telas, teclados, impressoras, placas e chips. Hardware é todo componente físico, interno ou externo do seu computador ou outro dispositivo, que determina do que um dispositivo é capaz e como você pode usá-lo. Embora dependa de um software para funcionar (e vice-versa), o hardware é um elemento a parte e igualmente importante.
+
+## HTTPS / HTTP (Hyper Text Transfer Protocol)
+
+É um protocolo, ou seja, uma determinada regra que permite ao seu computador trocar informações com um servidor que abriga um site. Porém, o HTTP não é segura e se torna propícias a pessoas mal intencionadas a interceptar os dados transmitidos. Por isso, existe o HTTPS (Hyper Text Transfer Protocol Secure), que insere uma camada de proteção na transmissão de dados entre seu computador e o servidor. Essa camada adicional permite que os dados sejam transmitidos por meio de uma conexão criptografada, aumentando significativamente a segurança dos dados.
+
+## HEX Color Code
+
+Código Hexadecimal que representa cores, composto por um # e 6 dígitos. Os dois primeiros definem a intensidade da cor vermelha; os dois do meio dizem respeito ao verde e os dois últimos, ao azul.
+
+## HSB Color Code
+
+Sistema de representação de cores semelhante ao código HEX, mas que leva em conta três elementos: matriz (H), saturação (S) e luminosidade (B).
+
+## HTML
+
+HTML (Hypertext Markup Language), é uma linguagem de marcação utilizada nas páginas web.
+
+## Indentação
+
+Uma espécie de “organização do código”, que facilita a leitura dele. Na indentação, a digitação dos códigos do programa ficam afastados por espaço da margem e dispostos hierarquicamente.
+
+## Intranet
+
+É uma rede interna de computadores semelhante à Internet, porém é de uso exclusivo de uma determinada organização, ou seja, somente os computadores da empresa podem acessá-la.
+
+## Internet
+
+Rede mundial que tem como objetivo interligar computadores para fornecer ao usuário o acesso a diversas informações. **Atenção: Internet e Web são coisas diferentes. Verificar significado de Web.**
+
+## IP (Internet Protocol)
+
+Traduzido para a Língua Portuguesa, significa Protocolo de Internet. Se trata de um endereço único que diferencia cada dispositivo conectado à internet. Esse protocolo funciona de forma semelhante ao CPF de uma pessoa física, permitindo que conexões e dispositivos sejam identificados a partir de uma sequência numérica. Cada aparelho ou dispositivo possui um IP fixo, enquanto a conexão com a internet gera IPs dinâmicos, também conhecido como IP externo.
+
+## Iteração
+
+Etapa do processo de Design Thinking que consiste em aprimoramento contínuo com base em feedback – a ideia é repensar escolhas, ações e decisões.
+
+## Iniciativa
+
+São coleções de épicos que possuem um objetivo em comum.
+
+## Interface
+
+Parte visível de um produto digital, seja ele mobile ou web, com a qual o usuário interage diretamente.
+
+## Job Story
+
+Uma forma de definir as funcionalidades de um produto que tem como base as motivações pelas quais o usuário o utiliza. Foca mais nos “porquês” e nos objetivos, e menos em características demográficas daquele usuário.
+
+## Job To Be Done
+
+Teoria que leva em conta, no desenvolvimento do produto, o trabalho pelo qual o usuário contrata o seu produto ou serviço. Portanto, parte-se do pressuposto que o usuário contrata algo para resolver as suas necessidades e não apenas pelos atributos funcionais desse produto/serviço. Os jobs podem ser  funcionais, sociais ou emocionais.
+
+## Job Mapping
+
+Processo ou documento que descreve detalhes do job que o usuário precisa que seja feito. Desconstrói esse job em pequenos passos dentro de um processo.
+
+## Jornada do Usuário
+
+Mapeamento de todo o caminho percorrido pelo usuário e os pontos de contato com a marca e o produto/serviço (em todos os canais).
+
+## Kanban
+
+Metodologia de acompanhamento visual e claro do trabalho da Sprint (ver significado). É composto por cartões, que são movimentados nas colunas de acordo com o andamento das atividades.
+
+Além disso, pode ser também considerado uma forma de desenvolvimento de projetos ágeis, se tornando mais uma metodologia além do Scrum. O Kanban, enquanto método ágil, visa trazer uma ideia de continuidade de desenvolvimento das tarefas que são limitadas pelo WIP (work in progress).
+
+
+
+
+
+
+
+
+
+
+
