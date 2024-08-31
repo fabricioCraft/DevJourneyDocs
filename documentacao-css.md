@@ -1,5 +1,18 @@
 # Sumário
 - [Representando cores com CSS](#representando-cores-com-css)
+- [Harmonia de cores](#harmonia-de-cores)
+    - [Círculo Cromático](#círculo-cromático)
+        - [Cores Primárias](#cores-primárias)
+        - [Cores Secundárias](#cores-secundárias)
+        - [Cores Terciárias](#cores-terciárias)
+    - [Cores Complementares](#cores-complementares)
+    - [Cores Análogas](#cores-análogas)
+        - [Cores Análogas Relacionadas](#cores-análogas-relacionadas)
+    - [Cores Triádicas](#cores-triádias)
+    - [Cores Quadráticas](#cores-qudráticas)
+    - [Cores Tetrádicas](#cores-tetrádicas)
+    - [Monocromia](#monocromia)
+
 
 ## Representando cores com CSS
 
@@ -30,3 +43,79 @@
 ```html
 <h2 style="background-color: hsla(0, 100%, 50%, 0.928); color: hsl(0, 0, 100);">Exemplo de Cores</h2>
 ```
+## Harmonia de cores
+
+Uma paleta de cores tem de 3 à 5 cores.
+
+### Círculo Cromático
+
+Ao fazer um corte central no círculo, entre o vermelho-arroxeado e o amarelo-esverdeado, do lado esquerdo estão as cores frias e do lado direito as cores quentes
+
+#### Cores primárias
+
+- Amarelo
+- Vermelho
+- Azul
+
+Estão simétricas no círculo cromático e formam um triângulo, formando uma harmonia.
+
+#### Cores Secundárias
+
+- Laranja
+- Violeta
+- Verde
+
+#### Cores Terciárias
+
+Mistura das cores primárias e secundárias. Elas são de tons pastéis e formam um hexágono no círculo cromático.
+
+### Cores Complementares
+
+Ao escolher as cores para compor um site, depois de escolher uma cor, a cor que mais combina com a cor escolhida está exatamente na sua oposição.
+
+### Cores Análogas
+
+São cores que não tem muito contraste uma com a outra, mas ainda assim são perceptives. Elas se sencontram ao lado uma da outra, ou seja, são cores vizinhas.
+
+#### Cores Análogas Relacionadas
+
+```html
+
+<img href="./images/cores-analogas-relacionadas.png" alt="cores análogas relacionadas">
+```
+### Cores Triádias
+
+Combinação de três cores que estão igualmente espaçadas no círculo cromático, formando um triângulo equilátero.
+
+```html
+<img href= "./images/cores-triadicas.webp" alt="cores triadicas">
+```
+
+### Cores Qudráticas
+
+É uma harmonia semelhante à harmonia de cores triádicas, exceto que neste esquema harmónico existem quatro cores, todas equidistantes no círculo cromático.
+
+```html
+<img href ="./images/cores-quadraticas.webp" alt="cores quadraticas">
+```
+
+### Cores Tetrádicas
+
+Esquema de cores que se caracteriza por uma paelte de quatro cores uniformemente distribuídas no círculo cromático, formando dois pares de cores complementares.
+
+Para obter as cores tetrádicas, é necessário traçar um retângulo comprido no centro do círculo cromático.
+
+```html
+<img href="./images/cores-tetradicas.png" alt="cores tetradicas">
+```
+
+### Monocromia
+
+Trabalha somente com uma cor com a mudança de duas características, luminosidade e saturação.
+
+
+
+
+
+
+
