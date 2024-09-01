@@ -12,7 +12,10 @@
     - [Cores Quadráticas](#cores-qudráticas)
     - [Cores Tetrádicas](#cores-tetrádicas)
     - [Monocromia](#monocromia)
-
+    - [Gradiente](#gradiente)
+    - [Tipografia](#tipografia)
+        - [Anatomia do tipo](#anatomia-do-tipo)
+            - [Serifa](#serifa)
 
 ## Representando cores com CSS
 
@@ -128,8 +131,52 @@ body{
 
 ```
 
+## Tipografia
+
+### Anatomia do tipo
+
+Todas as letras minúsculas de uma fonte é baseada na letra 'x'. A altura das letras minúsculas é conhecida como **altura-x**.
+
+Já a altura das letras maiúsculas é conhecida como **altura das maiúsculas**.
+
+Algumas letras minúsculas vazam da altura, que conhecemos como altura-x, tanto para cima, como as letras 'k' e 'b', quanto para baixo, como a letra 'g'. Esse vazamento das letras para cima é chamado de **ascendente**, já o vazamento das letras para baixo é denominado **descendente**.
+
+A altura total das letras considerando desde a altura das maiúsculas até o vazamento descendente das minúsculas é chamado de **corpo**.
+
+#### Serifa
+
+É um pequeno traço, barra ou prolongamento que se encontra no final das hastes de algumas letras, números e símbolos.
+
+![Letras Serifas](./images/letras-serifa.JPG)
+
+#### Categoria de Fontes
+
+- **Serif** - Esse estilo de fonte é caracterizado por um design mais conservador.
+
+    - **Marcas que usam serifas:** Zara, Tiffany & Co, Abercrombie & Fitch.
+
+    - **Psicologia das fontes serifadas:** são populares entre empresas que buscam retratar uma marca **elegante e sofisticada.** Os logotipos com esses tipos de fontes evocam **tradição, respeito e confiança.** Além disso, as serifas ajudam as empresas a parecerem mais estabelecidas e são ideais para comunicar uma **identidade baseada em autoridade e grandeza.**
+
+- **Sans-Serif -** Essas fontes são definidas pelas suas **linhas retas e simples.** Elas **não apresentam floreios e enfatizam a legibilidade e a simplicidade.**
+
+    - **Marcas que usam fontes não serifadas:** LinkedIn, Calvin Klein e The Guardian.
+
+    - **Psicologia da fonte não serifada:** esses tipos de fontes oferecem um **visual simples e descomplicado.** Elas **enfatizam a clareza**, com uma abordagem progressista – ***mas também podem ser ousadas e usadas para chamar a atenção com seu design refinado e eficiente.** As empresas que escolhem essa família de fontes priorizam um **senso de sensibilidade e honestidade** que não tem necessidade de floreios ou firulas.
+
+- **Monoespaçada:** Se caracteriza por ter todas as letras e caracteres ocupando o mesmo espaço horizontal.
 
 
 
+- **Handwritting (Script) -** Esses tipos de fontes também deixam de lado o visual de impressão compacto e **favorecem o estilo cursivo, mais natural.**
 
+    - **Marcas que usam fontes caligráficas:** Coca-Cola, Instagram e Cadillac.
+
+    - **Psicologia das fontes caligráficas:** evocam ideias de ***elegância, criatividade, liberdade e feminilidade.** Seus estilos curvados e floreados também comunicam uma **abordagem comercial mais prática e pessoal.** As empresas que querem transmitir uma emoção específica podem usar fontes caligráficas com um grande impacto. Da mesma forma, fontes caligráficas **são perfeitas para quem deseja transmitir uma sensação de pensamento singular e artístico.**
+
+- **Decorativas (Display) -** As fontes decorativas, ou gráficas, **renunciam às convenções em favor de um corpo tipográfico único e atraente.** A maioria dos tipos decorativos é útil para diversos setores e necessidades, pois essas fontes geralmente são criadas sob medida para empresas específicas.
+
+    - **Marcas que usam fontes decorativas:** Toys R’ Us, Lego e Fanta.
+
+    - **Psicologia das fontes decorativas:** **transmitem singularidade e enfatizam a originalidade.** Além disso, sua flexibilidade permite às empresas decidirem em quais emoções se concentrarem, misturando e combinando diferentes estilos de fontes. Algumas das emoções mais desencadeadas são a sensação de **informalidade, diversão e pensamento criativo.** Elas também podem evocar memes específicos da cultura ou características ou temas que lembram uma determinada época.
+![Categoria de Fontes](./images/categoria-de-fontes.JPG)
 
