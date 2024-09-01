@@ -16,6 +16,12 @@
     - [Tipografia](#tipografia)
         - [Anatomia do tipo](#anatomia-do-tipo)
             - [Serifa](#serifa)
+            - [Categoria de fonte](#categoria-de-fontes)
+        - [Família de fonte](#família-de-fonte)
+        - [Tamanho de fonte e suas medidas](#tamanho-de-fonte-e-suas-medidas)
+        - [Peso da fonte](#peso-da-fonte)
+        - [Shorthand Font](#shorthand-font)
+        - [Importando Fontes do Google Fonts](#importando-fontes-do-google-fonts)
 
 ## Representando cores com CSS
 
@@ -179,4 +185,111 @@ A altura total das letras considerando desde a altura das maiúsculas até o vaz
 
     - **Psicologia das fontes decorativas:** **transmitem singularidade e enfatizam a originalidade.** Além disso, sua flexibilidade permite às empresas decidirem em quais emoções se concentrarem, misturando e combinando diferentes estilos de fontes. Algumas das emoções mais desencadeadas são a sensação de **informalidade, diversão e pensamento criativo.** Elas também podem evocar memes específicos da cultura ou características ou temas que lembram uma determinada época.
 ![Categoria de Fontes](./images/categoria-de-fontes.JPG)
+
+### Tamanho de fonte e suas medidas
+
+Existem várias formas de determinar o tamanho da fonte e podem ser dividas em medidas absolutas e medidas relativas.
+
+Medidas absolutas:
+
+- Centímetro
+- Milímetro
+- Polegadas
+- Pixel
+- **Ponto**
+- **Paica**
+
+**OBS.: As duas últimas são medidas de tamanho de fonte para papel impresso e não é recomendadaa a sua utilização para material digital.**
+
+Medidas relativas: 
+
+- em - relativo à altura m maiúsculo
+
+ - ex - relativo à altura x de uma fonte
+
+ - rem - relativo ao root
+
+ - view-width - Porcentagem da largura do tamanho de tela
+
+ - view-heigth - Porcentagem da altura do tamanho de tela
+
+ A W3C recomenda-se o uso, para medidas de fontes, somente do **px** e do **em**.
+
+ **16px é o tamanho normal da fonte no site e equivale à 1em.**
+
+ Como cada dispositivo tem diferentes tamanhos e diferentes pixels, a utilização da medida de pixel para tamanho de fonte pode ser diferente dependendo do disposito. Nesse caso, o mais indicado é a utilização da medida em, pois faz uma relação ao tamanho natural da fonte.
+
+ ### Peso da fonte
+
+ O peso da fonte significa a intesidade da fonte. Estão dividadas em lighter, normal, bold ou bolder. Entretanto, nem todas as fontes têm essas variações.
+
+Também é possível escolher a intensidade da fonte através de numeração. A numeração vai de 100 a 900, permitindo uma maior gama de variações para escolher.
+
+```css
+
+font-weight = ligther
+```
+
+### Shorthand Font
+
+É uma configuração que permite atribuir propriedades as fontes.
+
+```css
+
+font: italic bolder 1.5em 'work sans', sans-serif;
+```
+**IMPORTANTE:** A ordem para fazer um shorthand em um fonte é a descrita acima.
+
+### Importando fontes do Google Fonts
+
+Existem algumas fontes que não estão disponíveis em um primeiro momento. Para torná-las disponíveis e conseguir usá-las dentro dos códigos é necessário fazer uma importação da fonte deseja.
+
+Para isso, é necessário fazer essa importação na parte CSS do seu código, como mostrado abaixo:
+
+```html
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+</style>
+```
+
+Também é possível fazer essa importação dentro do HTML, dentro da tag `<head>` do seu site, como mostrado abaixo:
+
+```html
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+```
+
+Depois disso, para usar a fonte importada no elemento desejado, basta informar o nome da fonte como valor na propriedade `font-family`.
+
+### Importando fontes que não estão no Google Fonts
+
+Para importar uma fonte específica que não está no google fonts, é necessário baixá-la, criar uma pasta para guardar essa fonte dentro do arquivo onde está localizado o seu código e importá-la usando o `@font-face`
+
+Ele recebe atributos como:
+
+- ``font-family`` que é o nome que você quer dar a essa fonte
+
+- `src: url()` que é o local onde a fonte está salva.
+
+- `format` que é o formato da fonte. Existem alguns tipos de formato, como:
+    - opentype (otf)
+    - truetype (ttf)
+    - embedded-opentype 
+    - truetype-aat (Tipografia avançada da Apple)
+    - svg
+
+    Cada navegador é compatível com um ou outro formato.
+
+```html
+<style>
+        @font-face {
+            font-family: 'Stitch' ;
+            src: url('./fonts/Stitch-Party.ttf') format('truetype')
+        }
+</style>
+```
 
