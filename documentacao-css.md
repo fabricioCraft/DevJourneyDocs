@@ -341,7 +341,7 @@ O primeiro `h1` dá o estilo à todos `h1`, entretanto o `h1#principal` coloca e
 
 O Wc3 orienta em suas diretrizes que o id deve ser único e as classes podem ser múltiplas. Então, se quiser estilizar mais de um elemento utilize o ``class`` para dar nome aos elementos. 
 
-## Pseudo Classes
+## Pseudo Class
 
 Especifica um estado especial do elemento selecionado. Por exemplo, `:hover` pode ser usado para alterar a cor de um botão quandp p usuário passar o cursos sobre ele.
 
