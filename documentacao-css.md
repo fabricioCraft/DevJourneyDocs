@@ -315,5 +315,40 @@ Para alinhar os textos na página, basta passar as seguintes regras de CSS:
 
 `text-indent` é uma regra de css que permite um espaçamento da primeira linha do parágrafo.
 
+## id e classes
 
+Muitas vezes, você vai querer dar estilo a um elemento específico. Por exemplo, se quiser colocar estilo em um elemento `<h1>` específico e não em todos, é necessário que esse `<h1>` possua um id ou uma class.
 
+```html
+<h1 id="principal">Criando sites com HTML e CSS</h1>
+```
+
+```css
+h1{
+    color: green;
+}
+
+h1#principal{
+    color: brown;
+}
+```
+
+O primeiro `h1` dá o estilo à todos `h1`, entretanto o `h1#principal` coloca estilo somente aos `h1` que tem o id `#`.
+
+**OBS.: Se usa `#` para id e `.` para as classes.**
+
+## Diferença entre id e class
+
+O Wc3 orienta em suas diretrizes que o id deve ser único e as classes podem ser múltiplas. Então, se quiser estilizar mais de um elemento utilize o ``class`` para dar nome aos elementos. 
+
+## Pseudo Classes
+
+Especifica um estado especial do elemento selecionado. Por exemplo, `:hover` pode ser usado para alterar a cor de um botão quandp p usuário passar o cursos sobre ele.
+
+```css
+/*Qualquer botão sobre o qual o ponteiro do usuário esteja passando sobre*/
+button:hover {
+  color: blue;
+}
+```
+Pseudo-classes permitem que você aplique um estilo a um elemento não apenas em relação ao conteúdo da árvore do documento, mas também em relação a fatores externos como o histórico de navegação (`:visited`, por exemplo), o status do seu conteúdo (como `:checked` em certos elementos de um formulário), ou a posição do mouse (como `:hover`, que permite saber se o mouse está sobre um elemento ou não).
