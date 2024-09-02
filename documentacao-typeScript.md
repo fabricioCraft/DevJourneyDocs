@@ -35,4 +35,24 @@ let estaCadastrado = 'sim' // erro antes de executar
 
 Repare que quando não é definido o tipo da variável, o seu tipo é inferido pelo próprio ts, ou seja, o tipo de valor que for atribuída na primeira vez será o tipo definido pelo próprio ts e não será possível mudar o seu tipo. 
 
+# Instalação do TypeScript
+
+Primeiro inicie o projeto no node:
+
+```git
+npm init -y
+```
+
+Depois, instale o TypeScript:
+
+```git
+npm install -D typescript
+```
+
+Ao finalizar o desenvolvimento da aplicação, é necessário fazer a transpilação do código:
+
+```git
+npx tsc 'nome-do-arquivo.ts'
+```
+
 
