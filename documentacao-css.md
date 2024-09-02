@@ -22,6 +22,9 @@
         - [Peso da fonte](#peso-da-fonte)
         - [Shorthand Font](#shorthand-font)
         - [Importando Fontes do Google Fonts](#importando-fontes-do-google-fonts)
+        - [Importando fontes que não estão no Google Fonts](#importando-fontes-que-não-estão-no-google-fonts)
+        - [Alinhamento de texto](#alinhamento-de-texto)
+        - [Id e classes](#id-e-classes)
 
 ## Representando cores com CSS
 
@@ -292,4 +295,25 @@ Ele recebe atributos como:
         }
 </style>
 ```
+
+### Alinhamento de texto
+
+Para alinhar os textos na página, basta passar as seguintes regras de CSS:
+
+```css
+     h1{
+            text-align: center;
+        }
+        h2{
+            text-align:  right;
+        }
+        p{
+            text-align: justify;
+            text-indent: 30px;
+        }
+```
+
+`text-indent` é uma regra de css que permite um espaçamento da primeira linha do parágrafo.
+
+
 
