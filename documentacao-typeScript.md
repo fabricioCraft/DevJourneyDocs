@@ -13,6 +13,12 @@ O TypeScript é usado somente para desenvolvimento do código e não para execu�
 
 Uma grande vantagem do TypeScript é apontar problemas durante o desenvolvimento da aplicação.
 
+Para iniciar um projeto em TypeScript, digite o comando abaixo no terminal. Esse comando irá criar um arquivo de configuração do TypeScript chamado ``ts.config``.
+
+```bash
+npx tsc --init
+```
+
 # Tipagem Dinâmica
 
 A Tipagem dinâmica permite que uma mesma variável receba uma reatribuição de tipos diferentes.
@@ -41,13 +47,13 @@ Repare que quando não é definido o tipo da variável, o seu tipo é inferido p
 
 Primeiro inicie o projeto no node:
 
-```git
+```bash
 npm init -y
 ```
 
 Depois, instale o TypeScript:
 
-```git
+```bash
 npm install -D typescript
 ```
 
@@ -55,20 +61,20 @@ npm install -D typescript
 
 Para rodar um arquivo TS, é necessário instalar a dependência ts-node:
 
-```git
+```bash
 npm install -D ts-node
 ```
 
 Feito isso, rode o arquivo com o seguinte comando:
 
-```git
+```bash
 npx ts-node 'nome-do-arquivo.ts'
 ```
 # Transformando código TS em JS
 
 Ao finalizar o desenvolvimento da aplicação, é necessário fazer a transpilação do código:
 
-```git
+```bash
 npx tsc 'nome-do-arquivo.ts'
 ```
 
