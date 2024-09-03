@@ -25,6 +25,16 @@
         - [Importando fontes que não estão no Google Fonts](#importando-fontes-que-não-estão-no-google-fonts)
         - [Alinhamento de texto](#alinhamento-de-texto)
         - [Id e classes](#id-e-classes)
+        - [Diferença entre id e class](#diferença-entre-id-e-class)
+        - [Pseudo Classes](#pseudo-classes)
+                - [:visited](#visited)
+                - [:hover](#hover)
+                - [:active](#active)
+        - [Pseudo-elementos](#pseudo-elementos)
+            - [::after](#after)
+            - [::before](#before)
+            
+
 
 ## Representando cores com CSS
 
@@ -341,7 +351,7 @@ O primeiro `h1` dá o estilo à todos `h1`, entretanto o `h1#principal` coloca e
 
 O Wc3 orienta em suas diretrizes que o id deve ser único e as classes podem ser múltiplas. Então, se quiser estilizar mais de um elemento utilize o ``class`` para dar nome aos elementos. 
 
-## Pseudo Class
+## Pseudo Classes
 
 Especifica um estado especial do elemento selecionado. Por exemplo, `:hover` pode ser usado para alterar a cor de um botão quandp p usuário passar o cursos sobre ele.
 
@@ -352,3 +362,60 @@ button:hover {
 }
 ```
 Pseudo-classes permitem que você aplique um estilo a um elemento não apenas em relação ao conteúdo da árvore do documento, mas também em relação a fatores externos como o histórico de navegação (`:visited`, por exemplo), o status do seu conteúdo (como `:checked` em certos elementos de um formulário), ou a posição do mouse (como `:hover`, que permite saber se o mouse está sobre um elemento ou não).
+
+
+### :visited 
+
+Estilização de links que foram visitados.
+
+```css
+a:visited{
+    color: red;
+}   
+```
+
+### :hover
+
+Estiliza o elemento quando o mouse está sobre ele.
+
+```css
+a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+```
+
+### :active
+
+Muda a cor do elemento quando o usuário clica nele.
+
+```css
+a:active{
+    color: red;
+}
+```
+## Pseudo-elementos
+
+São palavras reservadas que começam com dois pontos duplos `::`.
+
+### ::after
+
+Adiciona conteúdo depois do conteúdo do elemento.
+
+```css
+p::after{
+    content: 'Texto inserido pelo autor do artigo';
+}
+```
+
+### ::before
+
+Adiciona conteúdo antes do conteúdo do elemento.
+
+```css
+p::before{
+    content: 'Texto inserido pelo autor do artigo';
+}
+```
+
+
