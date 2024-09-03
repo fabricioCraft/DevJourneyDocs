@@ -417,5 +417,29 @@ p::before{
     content: 'Texto inserido pelo autor do artigo';
 }
 ```
+## Modelo de Caixas
+
+Todo elemento que você escreve em HTML é uma caixa retangular.
+
+padding - espaçamento interno
+
+border - borda de uma caixa
+
+outline - contorno de uma caixa
+
+margin - espaçamento externo
+
+### Tipos de caixa
+
+- box-level: São elementos que ocupam toda a largura disponível do contêiner pai e sempre começam em uma nova linha. Exemplos incluem ``<div>``, ``<p>``, ``<h1>``, ``<h6>``, ``<section>``, ``<main>``, ``<header>``, ``<footer>``, ``<nav>``, ``<article>``, ``<aside>``, ``<ul>``, ``<ol>``, ``<li>``, ``<form>``, ``<table>``, ``<video>``, entre outros. Esses elementos criam um "bloco" de conteúdo e geralmente são usados para estruturar o layout da página.
+
+- inline-level: São elementos que ocupam apenas a largura necessária para exibir seu conteúdo interno e não começam em uma nova linha. Exemplos incluem ``<span>``, ``<a>``, ``<img>``, ``<input>``, ``<label>``, ``<select>``, ``<textarea>``, ``<button>``, ``<code>``, ``<small>``, ``<strong>``, ``<i>``, ``<em>``, ``<mark>``, ``<del>``, ``<ins>``, ``<sub>``, ``<sup>``, entre outros. Esses elementos são usados para estilizar partes específicas do conteúdo sem criar um novo bloco de conteúdo.
+
+
+
+
+
+
+
 
 
