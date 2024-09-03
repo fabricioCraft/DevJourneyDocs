@@ -2,7 +2,9 @@
 - [TypeScript](#typescript)
 - [Tipagem Dinâmica](#tipagem-dinâmica)
 - [Typagem Estática](#tipagem-estática)
-
+- [Instalação do TypeScript](#instalação-do-typescript)
+- [Rodando um arquivo TS](#rodando-um-arquivo-ts)
+- [Transformação do código TS em JS](#transformando-código-ts-em-js)
 # TypeScript
 
 É um supercojunto do JavaScript, criado pela Microsoft, que permite desenvolver aplicações JavaScript utilizando conceitos e arquiteturas mais sólidas
@@ -48,6 +50,21 @@ Depois, instale o TypeScript:
 ```git
 npm install -D typescript
 ```
+
+# Rodando um arquivo TS
+
+Para rodar um arquivo TS, é necessário instalar a dependência ts-node:
+
+```git
+npm install -D ts-node
+```
+
+Feito isso, rode o arquivo com o seguinte comando:
+
+```git
+npx ts-node 'nome-do-arquivo.ts'
+```
+# Transformando código TS em JS
 
 Ao finalizar o desenvolvimento da aplicação, é necessário fazer a transpilação do código:
 
