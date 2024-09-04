@@ -442,6 +442,7 @@ margin - espaçamento externo
 
 - inline-level: São elementos que ocupam apenas a largura necessária para exibir seu conteúdo interno e não começam em uma nova linha. Exemplos incluem ``<span>``, ``<a>``, ``<img>``, ``<input>``, ``<label>``, ``<select>``, ``<textarea>``, ``<button>``, ``<code>``, ``<small>``, ``<strong>``, ``<i>``, ``<em>``, ``<mark>``, ``<del>``, ``<ins>``, ``<sub>``, ``<sup>``, entre outros. Esses elementos são usados para estilizar partes específicas do conteúdo sem criar um novo bloco de conteúdo.
 
+
 # Grouping Tags
 
 
@@ -488,6 +489,18 @@ Permite adicionar sombra ao redor de um elemento.
 ```css
 box-shadow: 10px 10px 10px black; /*horizontal, vertical, blur, spread, color*/
 ```
+# Box-Radius
+
+Permite adicionar vértices arredondados a um elemento.
+
+```css
+border-radius: 10px; /*topo, direita, baixo, esquerda*/
+border-radius: 10px 10px 10px 10px; /*topo, direita, baixo, esquerda*/
+border-radius: 10px 20px; /*superior-direita e inferior-esquerda, superior-esquerda e inferior-direita*/
+```
+
+
+
 
 
 
