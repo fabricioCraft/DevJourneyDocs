@@ -13,27 +13,34 @@
     - [Cores Tetrádicas](#cores-tetrádicas)
     - [Monocromia](#monocromia)
     - [Gradiente](#gradiente)
-    - [Tipografia](#tipografia)
-        - [Anatomia do tipo](#anatomia-do-tipo)
-            - [Serifa](#serifa)
-            - [Categoria de fonte](#categoria-de-fontes)
+- [Tipografia](#tipografia)
+    - [Anatomia do tipo](#anatomia-do-tipo)
+        - [Serifa](#serifa)
+        - [Categoria de fonte](#categoria-de-fontes)
         - [Família de fonte](#família-de-fonte)
         - [Tamanho de fonte e suas medidas](#tamanho-de-fonte-e-suas-medidas)
         - [Peso da fonte](#peso-da-fonte)
         - [Shorthand Font](#shorthand-font)
-        - [Importando Fontes do Google Fonts](#importando-fontes-do-google-fonts)
-        - [Importando fontes que não estão no Google Fonts](#importando-fontes-que-não-estão-no-google-fonts)
-        - [Alinhamento de texto](#alinhamento-de-texto)
-        - [Id e classes](#id-e-classes)
-        - [Diferença entre id e class](#diferença-entre-id-e-class)
-        - [Pseudo Classes](#pseudo-classes)
-                - [:visited](#visited)
-                - [:hover](#hover)
-                - [:active](#active)
-        - [Pseudo-elementos](#pseudo-elementos)
-            - [::after](#after)
-            - [::before](#before)
-            
+- [Importando Fontes do Google Fonts](#importando-fontes-do-google-fonts)
+- [Importando fontes que não estão no Google Fonts](#importando-fontes-que-não-estão-no-google-fonts)
+- [Alinhamento de texto](#alinhamento-de-texto)
+- [Id e classes](#id-e-classes)
+    - [Diferença entre id e class](#diferença-entre-id-e-class)
+    - [Pseudo Classes](#pseudo-classes)
+        - [:visited](#visited)
+        - [:hover](#hover)
+        - [:active](#active)
+    - [Pseudo-elementos](#pseudo-elementos)
+        - [::after](#after)
+        - [::before](#before)
+- [Modelo de Caixas](#modelo-de-caixas)
+    - [Tipos de caixa](#tipos-de-caixa)
+    - [Grouping Tags](#grouping-tags)
+    - [Padding](#padding)
+    - [Margin](#margin)
+    - [Border](#border)
+    - [Box-Shadow](#box-shadow)
+
 
 
 ## Representando cores com CSS
@@ -253,7 +260,7 @@ font: italic bolder 1.5em 'work sans', sans-serif;
 ```
 **IMPORTANTE:** A ordem para fazer um shorthand em um fonte é a descrita acima.
 
-### Importando fontes do Google Fonts
+# Importando fontes do Google Fonts
 
 Existem algumas fontes que não estão disponíveis em um primeiro momento. Para torná-las disponíveis e conseguir usá-las dentro dos códigos é necessário fazer uma importação da fonte deseja.
 
@@ -278,7 +285,7 @@ Também é possível fazer essa importação dentro do HTML, dentro da tag `<hea
 
 Depois disso, para usar a fonte importada no elemento desejado, basta informar o nome da fonte como valor na propriedade `font-family`.
 
-### Importando fontes que não estão no Google Fonts
+# Importando fontes que não estão no Google Fonts
 
 Para importar uma fonte específica que não está no google fonts, é necessário baixá-la, criar uma pasta para guardar essa fonte dentro do arquivo onde está localizado o seu código e importá-la usando o `@font-face`
 
@@ -306,7 +313,7 @@ Ele recebe atributos como:
 </style>
 ```
 
-### Alinhamento de texto
+# Alinhamento de texto
 
 Para alinhar os textos na página, basta passar as seguintes regras de CSS:
 
@@ -325,7 +332,7 @@ Para alinhar os textos na página, basta passar as seguintes regras de CSS:
 
 `text-indent` é uma regra de css que permite um espaçamento da primeira linha do parágrafo.
 
-## id e classes
+# id e classes
 
 Muitas vezes, você vai querer dar estilo a um elemento específico. Por exemplo, se quiser colocar estilo em um elemento `<h1>` específico e não em todos, é necessário que esse `<h1>` possua um id ou uma class.
 
@@ -417,7 +424,7 @@ p::before{
     content: 'Texto inserido pelo autor do artigo';
 }
 ```
-## Modelo de Caixas
+# Modelo de Caixas
 
 Todo elemento que você escreve em HTML é uma caixa retangular.
 
@@ -429,11 +436,58 @@ outline - contorno de uma caixa
 
 margin - espaçamento externo
 
-### Tipos de caixa
+## Tipos de caixa
 
 - box-level: São elementos que ocupam toda a largura disponível do contêiner pai e sempre começam em uma nova linha. Exemplos incluem ``<div>``, ``<p>``, ``<h1>``, ``<h6>``, ``<section>``, ``<main>``, ``<header>``, ``<footer>``, ``<nav>``, ``<article>``, ``<aside>``, ``<ul>``, ``<ol>``, ``<li>``, ``<form>``, ``<table>``, ``<video>``, entre outros. Esses elementos criam um "bloco" de conteúdo e geralmente são usados para estruturar o layout da página.
 
 - inline-level: São elementos que ocupam apenas a largura necessária para exibir seu conteúdo interno e não começam em uma nova linha. Exemplos incluem ``<span>``, ``<a>``, ``<img>``, ``<input>``, ``<label>``, ``<select>``, ``<textarea>``, ``<button>``, ``<code>``, ``<small>``, ``<strong>``, ``<i>``, ``<em>``, ``<mark>``, ``<del>``, ``<ins>``, ``<sub>``, ``<sup>``, entre outros. Esses elementos são usados para estilizar partes específicas do conteúdo sem criar um novo bloco de conteúdo.
+
+# Grouping Tags
+
+
+- `<div>` - tag de divisão de conteúdo. Usado para agrupar elementos para estilização.
+- `<span>` - tag de divisão de conteúdo. Usado para agrupar elementos para estilização.
+- `<article>` - tag de artigo. Usado para agrupar elementos que formam um artigo completo.
+- `<section>` - tag de seção. Usado para agrupar elementos que formam uma seção completa da página.
+- `<aside>` - tag de barra lateral. Usado para agrupar elementos que formam uma barra lateral.
+- `<header>` - tag de cabeçalho. Usado para agrupar elementos que formam um cabeçalho.
+- `<footer>` - tag de rodapé. Usado para agrupar elementos que formam um rodapé.
+
+# Padding
+
+Permite adicionar espaçamento interno a um elemento.
+
+```css
+padding: 10px 10px 10px 10px; /*topo, direita, baixo, esquerda*/
+padding: 10px 10px; /*topo e baixo, direita e esquerda*/
+padding: 10px; /*topo, direita, baixo e esquerda*/
+```
+
+# Margin
+
+Permite adicionar espaçamento externo a um elemento.
+
+```css
+margin: 10px 10px 10px 10px; /*topo, direita, baixo, esquerda*/
+margin: 10px 10px; /*topo e baixo, direita e esquerda*/
+margin: 10px; /*topo, direita, baixo e esquerda*/
+```
+
+# Border 
+
+Permite adicionar borda a um elemento.
+
+```css
+border: 1px solid black; /* border-width, border-style, border-color */
+```
+
+# Box-Shadow
+
+Permite adicionar sombra ao redor de um elemento.
+
+```css
+box-shadow: 10px 10px 10px black; /*horizontal, vertical, blur, spread, color*/
+```
 
 
 
