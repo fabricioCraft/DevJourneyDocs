@@ -5,7 +5,13 @@
     - [Escopo](#escopo)
 - [Operadores](#operadores)
 - [Template Strings](#template-strings)
-
+- [Condicionais IF e Else](#condicionais-if-e-else)
+- [Condicionais IF, ELSE e ELSE IF](#condicionais-if-else-e-else-if)
+- [Truthy e Falsy](#truthy-e-falsy)
+- [Ternário](#ternário)
+- [Operador de Negação ``!`` (NOT)](#operador-de-negação--not)
+- [Operador lógico AND ``&&``](#operador-lógico-and-)
+- [Operador lógico OR ``||``](#operador-lógico-or-)
 # Variáveis
 
 Identificadores que recebem nome e são usadas para armazenar dados.
@@ -78,4 +84,96 @@ const mensagem = `Olá, meu nome é ${nome} e tenho ${idade} anos.`;
 ```
 
 Dessa forma, as template strings oferecem uma maneira mais versátil e legível de manipular strings em comparação com as strings tradicionais. Elas são amplamente utilizadas em aplicações web e têm se tornado uma prática comum em linguagens de programação modernas.
+
+# Condicionais IF e ELSE
+
+É usada executar uma afirmação verificando se uma condição é verdadeira ou falsa.
+
+```js
+if (condição) {
+    // código a ser executado se a condição for verdadeira
+} else {
+    // código a ser executado se a condição for falsa
+}
+
+```
+
+# Condicionais IF, ELSE e ELSE IF
+
+Quando for necessário verificar mais de uma condição, podemos usar a condicional `else if`.
+
+```js
+if (condição) {
+    // código a ser executado se a condição 1 for verdadeira
+} else if (condição) {
+    // código a ser executado se a condição 2 for verdadeira
+} else {
+    // código a ser executado se nenhuma das condições anteriores for verdadeira
+}
+```
+
+# Truthy e Falsy
+
+Diferença entre Truthy e Falsy:
+
+- Truthy: Qualquer valor que não é Falsy é considerado Truthy.
+- Falsy: Valores que são considerados falsos em contextos que esperam um booleano.
+
+```js
+console.log(Boolean(0)); // falshy
+console.log(Boolean(null)); // falshy
+console.log(Boolean(undefined)); // falshy
+console.log(Boolean("")); // falshy
+console.log(Boolean(NaN)); // falshy
+console.log(Boolean(false)); // falshy
+```
+
+# Ternário
+
+Operador que permite realizar uma operação condicional de forma mais compacta.
+
+```js
+condição ? expressão1 /*se a condição for verdadeira*/ : expressão2 /*se a condição for falsa*/
+```
+
+Exemplo:
+
+```js
+const idade = 18;
+const resultado = idade >= 18 ? "Maior de idade" : "Menor de idade";
+console.log(resultado); // Maior de idade
+```
+
+# Operador de Negação ``!`` (NOT)
+
+O operador de negação ``!`` é um operador  que inverte o valor de uma expressão. Se a expressão for verdadeira, o operador de negação a tornará falsa, e vice-versa.
+
+```js
+const valor = true;
+const resultado = !valor;
+console.log(resultado); // false
+```
+
+Podemos usar, por exemplo, quando queremos verificar se o nome foi digitado pelo usuário no formulário.
+
+# Operador lógico AND ``&&``
+
+O operador lógico AND ``&&`` é um operador que retorna true se ambas as expressões forem verdadeiras.
+
+```js
+const valor1 = true;
+const valor2 = true;
+const resultado = valor1 && valor2;
+console.log(resultado); // true
+```
+
+# Operador lógico OR ``||``
+
+O operador lógico OR ``||`` é um operador que retorna true se uma das expressões for verdadeira.
+
+```js
+const valor1 = true;
+const valor2 = false;
+const resultado = valor1 || valor2;
+console.log(resultado); // true
 
