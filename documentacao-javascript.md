@@ -302,5 +302,14 @@ for (let i = 0; i < 5; i++) {
     console.log(i);
 }
 ```
+# Loop for em Strings
 
+O loop `for` pode ser usado para iterar sobre os caracteres de uma string.
+
+```js
+const string = "Hello";
+for (let i = 0; i < string.length; i++) {
+    console.log(string[i]);
+}
+```
 
