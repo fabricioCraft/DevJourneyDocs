@@ -78,4 +78,21 @@ Ao finalizar o desenvolvimento da aplicação, é necessário fazer a transpila�
 npx tsc 'nome-do-arquivo.ts'
 ```
 
+# Tipagem de arrays no TypeScript   
 
+Para criar um array no typescript definindo o tipo de variável, podemos usar a tipagem `Array[]`.
+
+```ts
+let array : number[] = [1, 2, 3, 4, 5]
+```
+
+# Loop While
+
+O loop while é uma estrutura de repetição que executa um bloco de código enquanto uma condição for verdadeira.
+
+```ts
+let i = 0
+while (i < 10) {
+    console.log(i)
+}
+```
