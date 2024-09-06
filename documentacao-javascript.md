@@ -12,6 +12,10 @@
 - [Operador de Negação ``!`` (NOT)](#operador-de-negação--not)
 - [Operador lógico AND ``&&``](#operador-lógico-and-)
 - [Operador lógico OR ``||``](#operador-lógico-or-)
+- [Arrays](#arrays)
+
+
+
 # Variáveis
 
 Identificadores que recebem nome e são usadas para armazenar dados.
@@ -176,4 +180,60 @@ const valor1 = true;
 const valor2 = false;
 const resultado = valor1 || valor2;
 console.log(resultado); // true
+```
 
+# Arrays
+
+Arrays são estruturas de dados que permitem armazenar uma coleção de valores em uma única variável. Cada valor dentro do array é identificado por um índice, ou index, que começa do zero. Também pode ser chamado de lista.
+
+```js
+const array = [1, 2, 3, 4, 5];
+console.log(array[0]); // 1
+console.log(array[1]); // 2
+```
+## Como acessar itens do array
+
+Para acessar um item específico do array, usamos a propriedade `[]` e o índice do item que queremos acessar.
+
+```js
+const array = [1, 2, 3, 4, 5];
+console.log(array[0]); // 1
+console.log(array[1]); // 2
+```
+
+## Como alterar itens do array
+
+Para adicionar ou alterar um item específico do array, usamos a propriedade `[]` e o índice do item que queremos adicionar ou alterar.
+
+```js
+const array = [1, 2, 3, 4, 5];
+array[0] = 10;
+console.log(array); // [10, 2, 3, 4, 5]
+```
+
+## Como adicionar itens ao array
+
+Para adicionar um item na última posição do array, usamos o método `push()`.
+
+```js
+const array = [1, 2, 3, 4, 5];
+array.push(6);
+console.log(array); // [1, 2, 3, 4, 5, 6]
+```
+
+outra forma de adicionar um item, é chamar a variável e passar o índice do item que queremos adicionar e o valor do item.
+
+```js
+const array = [1, 2, 3, 4, 5];
+array[6] = 10;
+console.log(array); // [1, 2, 3, 4, 5, 10]
+```
+
+## Como saber o tamanho do array
+
+Para saber o tamanho do array, usamos a propriedade `length`.
+
+```js
+const array = [1, 2, 3, 4, 5];
+console.log(array.length); // 5
+```
