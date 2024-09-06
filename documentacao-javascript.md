@@ -13,6 +13,12 @@
 - [Operador lógico AND ``&&``](#operador-lógico-and-)
 - [Operador lógico OR ``||``](#operador-lógico-or-)
 - [Arrays](#arrays)
+    - [Como acessar itens do array](#como-acessar-itens-do-array)
+    - [Como alterar itens do array](#como-alterar-itens-do-array)
+    - [Como adicionar itens ao array](#como-adicionar-itens-ao-array)
+    - [Como saber o tamanho do array](#como-saber-o-tamanho-do-array)
+- [Loop While](#loop-while)
+- [Loop For](#loop-for)
 
 
 
@@ -237,3 +243,64 @@ Para saber o tamanho do array, usamos a propriedade `length`.
 const array = [1, 2, 3, 4, 5];
 console.log(array.length); // 5
 ```
+
+# Loop While
+
+O loop `while` é uma estrutura de repetição que executa um bloco de código enquanto uma condição for verdadeira.
+
+```js
+let i = 0;
+while (i < 5) {
+    console.log(i);
+    i++;
+}
+```
+
+# Loop For
+
+O loop `for` é uma estrutura de repetição que executa um bloco de código um número determinado de vezes.
+
+```js
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+```
+
+# Loop For...of
+
+O loop `for...of` é uma estrutura de repetição que executa um bloco de código para cada elemento de um array.
+
+```js
+const array = [1, 2, 3, 4, 5];
+for (const item of array) {
+    console.log(item);
+}
+```
+
+# Break
+
+O break é uma palavra reservada que interrompe o loop.
+
+```js
+for (let i = 0; i < 5; i++) {
+    if (i === 3){ 
+        break
+    };
+    console.log(i);
+}
+```
+
+# Continue
+
+O continue é uma palavra reservada que interrompe a iteração atual do loop e continua para a próxima iteração.
+
+```js
+for (let i = 0; i < 5; i++) {
+    if (i === 3){ 
+        continue
+    };
+    console.log(i);
+}
+```
+
+
