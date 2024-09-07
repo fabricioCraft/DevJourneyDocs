@@ -19,6 +19,11 @@
     - [Como saber o tamanho do array](#como-saber-o-tamanho-do-array)
 - [Loop While](#loop-while)
 - [Loop For](#loop-for)
+- [Loop For...of](#loop-forof)
+- [Break](#break)
+- [Continue](#continue)
+- [Loop for em Strings](#loop-for-em-strings)
+
 
 
 
