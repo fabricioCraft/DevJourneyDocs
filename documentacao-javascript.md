@@ -318,3 +318,102 @@ for (let i = 0; i < string.length; i++) {
 }
 ```
 
+# Objetos
+
+É uma estrutura de dados que permite armazenar uma coleção de dados em uma **única variável.**
+
+Exemplo:
+
+```js
+const objeto = {
+    nome: "João",
+    idade: 20,
+    cidade: "São Paulo"
+};
+```
+
+Cada informação dentro do objeto é uma **propriedade (membro)** e o valor da propriedade é o valor que queremos armazenar.
+
+## Como criar objetos
+
+Para criar um objeto, usamos as chaves `{}`, como exemplificado abaixo:
+
+```js
+const objeto = {
+    nome: "João",
+    idade: 20,
+    cidade: "São Paulo"
+};
+```
+
+## Como acessar propriedades de um objeto
+
+Para acessar uma propriedade de um objeto, usamos o nome do objeto seguido da propriedade que queremos acessar.
+
+```js
+const objeto = {
+    nome: "João",
+    idade: 20,
+    cidade: "São Paulo"
+};
+console.log(objeto.nome); // João
+console.log(objeto.idade); // 20
+console.log(objeto.cidade); // São Paulo
+```
+## Como alterar e adicionar propriedades de um objeto
+
+Para alterar ou adicionar uma propriedade de um objeto, usamos o nome do objeto, a propriedade que queremos alterar e o novo valor.
+
+```js
+const objeto = {
+    nome: "João",
+    idade: 20,
+    cidade: "São Paulo" 
+};
+objeto.nome = "Maria";
+console.log(objeto.nome); // Maria
+```
+## Array de Objetos
+
+Podemos criar um array de objetos, como por exemplo:
+
+```js
+const arrayDeObjetos = [
+    { nome: "João", idade: 20, cidade: "São Paulo" },
+    { nome: "Maria", idade: 30, cidade: "Rio de Janeiro" }
+];
+```
+
+Para que possamos acessar os dados de um array de objetos, podemos usar o loop `for...of`.
+
+```js
+for (const item of arrayDeObjetos) {
+    console.log(item.nome);
+}
+```
+
+## Tipagem de Objetos em TypeScript
+
+Em TypeScript, os objetos são tipados estaticamente, o que significa que o tipo de dado de um objeto deve ser definido no momento da criação do objeto.
+
+```ts
+type TPessoa = {
+    nome: string;
+    idade: number;
+};
+
+const pessoa: Pessoa = {
+    nome: "João",
+    idade: 20
+};
+```
+
+Podemos também definir o tipo de um objeto como sendo opcional, utilizando o `?`.
+
+```ts
+type TPessoa = {
+    nome: string;
+    idade?: number;
+};
+
+```
