@@ -29,6 +29,10 @@
     - [Como alterar e adicionar propriedades de um objeto](#como-alterar-e-adicionar-propriedades-de-um-objeto)
     - [Array de Objetos](#array-de-objetos)
     - [Tipagem de Objetos em TypeScript](#tipagem-de-objetos-em-typescript)
+    - [Desestruturação de Objetos](#desestruturação-de-objetos)
+    - [Rest Operator](#rest-operator)
+    - [Spread Operator](#spread-operator)
+
 
 
 
@@ -424,3 +428,77 @@ type TPessoa = {
 };
 
 ```
+
+## Desestruturação de Objetos
+
+A desestruturação de objetos é uma funcionalidade que permite extrair valores de um objeto e atribuí-los a variáveis individuais.
+
+Sua funcionalidade prática é que ela permite que você pegue apenas os valores que você precisa de um objeto, sem precisar criar uma variável para cada valor.
+
+A desestruturação de objetos tem várias utilizações práticas:
+
+1. Simplificação de código: Permite extrair múltiplas propriedades de um objeto de forma concisa.
+
+2. Atribuição de variáveis: Facilita a criação de variáveis locais a partir de propriedades de objetos.
+
+3. Parâmetros de funções: Pode ser usada para extrair valores específicos de objetos passados como argumentos.
+
+4. Renomeação de variáveis: Permite atribuir nomes diferentes às variáveis extraídas.
+
+5. Valores padrão: Possibilita definir valores padrão para propriedades que podem não existir no objeto.
+
+6. Aninhamento: Pode ser usada para desestruturar objetos aninhados.
+
+Exemplos:
+
+
+```ts
+const pessoa = {
+    nome: "João",
+    idade: 20
+};
+
+const { nome, idade } = pessoa;
+console.log(nome); // João
+console.log(idade); // 20
+```
+## Rest Operator
+
+O rest operator é uma funcionalidade que permite que você pegue os valores restantes de um objeto e atribuia a uma nova variável.
+
+```ts
+const pessoa = {
+    nome: "João",
+    idade: 20,
+    cidade: "São Paulo"
+};
+
+const { nome, ...resto } = pessoa;
+console.log(nome); // João
+console.log(resto); // { idade: 20, cidade: "São Paulo" }
+```
+
+## Spread Operator
+
+O spread operator é uma funcionalidade que permite espalhar (spread) os elementos de um objeto ou array em outro objeto ou array. Sua sintaxe é representada por três pontos (...) seguidos do objeto ou array que se deseja espalhar.
+
+A funcionalidade prática do spread operator inclui:
+
+1. Cópia de arrays ou objetos: Permite criar uma cópia superficial de arrays ou objetos, permitindo a criação de novas instâncias com valores idênticos.
+
+2. Concatenação de arrays: Simplifica a concatenação de arrays, permitindo a adição de elementos de um array a outro sem a necessidade de loops manuais.
+
+3. Passagem de argumentos em funções: Permite passar elementos de um array como argumentos para uma função, evitando a necessidade de listar cada elemento separadamente.
+
+4. Combinação de arrays ou objetos: Permite combinar facilmente arrays ou objetos em um único array ou objeto, facilitando a manipulação de dados.
+
+Exemplos:
+
+```ts
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const array3 = [...array1, ...array2];
+console.log(array3); // [1, 2, 3, 4, 5, 6]
+```
+
+
