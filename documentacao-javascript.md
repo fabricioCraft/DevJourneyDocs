@@ -32,6 +32,10 @@
     - [Desestruturação de Objetos](#desestruturação-de-objetos)
     - [Rest Operator](#rest-operator)
     - [Spread Operator](#spread-operator)
+- [Função](#função)
+    - [Arrow Functions](#arrow-functions)
+    - [Parâmetros da função](#parâmetros-da-função)
+    - [Arrow Functions](#arrow-functions)
 
 
 
@@ -500,5 +504,68 @@ const array2 = [4, 5, 6];
 const array3 = [...array1, ...array2];
 console.log(array3); // [1, 2, 3, 4, 5, 6]
 ```
+# Função
+
+As funções são blocos de código reutilizáveis que executam uma tarefa específica. Elas são fundamentais na programação, pois permitem organizar o código, evitar repetições e tornar o programa mais modular e fácil de manter.
+
+Características principais das funções:
+
+1. Podem receber parâmetros (dados de entrada)
+2. Podem retornar um valor (resultado)
+3. Podem ser chamadas várias vezes no programa
+4. Ajudam a organizar e estruturar o código
+
+Exemplo básico de uma função em JavaScript:
+
+```js
+function nomeDaFuncao(parametros) {
+    // corpo da função
+}
+```
+
+## Parâmetros da função
+
+Os parâmetros da função são valores que podem ser passados para a função quando ela é chamada. Eles permitem que a função receba dados externos e os utilize em seu processamento interno.
+
+Características dos parâmetros de função:
+
+1. Podem ser de qualquer tipo de dado (números, strings, objetos, arrays, etc.)
+2. São opcionais, uma função pode não ter parâmetros
+3. Podem ter valores padrão definidos
+
+Exemplos de funções com parâmetros:
+
+```js
+function soma(a, b) {
+    return a + b;
+}
+
+console.log(soma(1, 2)); // 3
+```
+
+
+
+## Arrow Functions
+
+São uma forma mais curta de escrever funções.
+
+As Arrow Functions são uma sintaxe mais concisa para escrever funções em JavaScript, introduzidas no ECMAScript 6 (ES6). Elas oferecem uma maneira mais curta de definir funções, especialmente útil para funções anônimas e callbacks.
+
+Características principais das Arrow Functions:
+
+1. Sintaxe mais curta
+2. Não podem ser usadas como construtores
+3. Melhor para funções de callback e funções anônimas
+
+Exemplos de Arrow Functions:
+
+```js
+const nomeDaFuncao = (parametros) => {
+    // corpo da função
+}
+```
+
+
+
 
 
