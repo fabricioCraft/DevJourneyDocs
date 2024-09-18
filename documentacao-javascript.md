@@ -565,6 +565,17 @@ const nomeDaFuncao = (parametros) => {
 }
 ```
 
+# Loop While
+
+O loop while é uma estrutura de repetição que executa um bloco de código enquanto uma condição for verdadeira.
+
+```ts
+let i = 0
+while (i < 10) {
+    console.log(i)
+}
+```
+
 
 
 

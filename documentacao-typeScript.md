@@ -86,13 +86,4 @@ Para criar um array no typescript definindo o tipo de variável, podemos usar a 
 let array : number[] = [1, 2, 3, 4, 5]
 ```
 
-# Loop While
 
-O loop while é uma estrutura de repetição que executa um bloco de código enquanto uma condição for verdadeira.
-
-```ts
-let i = 0
-while (i < 10) {
-    console.log(i)
-}
-```
