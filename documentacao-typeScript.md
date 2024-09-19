@@ -15,6 +15,7 @@
     - [Type Narrowing](#type-narrowing-estreitamento-de-tipos)
     - [Type Assertion](#type-assertion)
     - [Verificação de existência de propriedades em objetos](#verificação-de-existência-de-propriedades-em-objetos)
+    - [Tipo Unknown](#tipo-unknown)
     
 
 
@@ -376,7 +377,108 @@ Verificações explícitas de propriedades ajudam a tornar o código mais claro 
 
 A verificação da existência de propriedades em objetos é uma prática recomendada em TypeScript, pois ajuda a evitar erros, facilita a manipulação de dados opcionais e melhora a legibilidade do código.
 
+## Tipo Unknown
 
+O tipo unknown no TypeScript é utilizado para representar dados cujo tipo exato não é conhecido em um determinado ponto do código. Isso oferece uma maneira mais segura de lidar com dados que podem vir de fontes externas, como APIs, onde a estrutura dos dados pode não ser clara.
+
+**Utilidade Prática do Tipo Unknown**
+
+**Segurança ao Manipular Dados Desconhecidos**
+
+O uso de unknown força o desenvolvedor a validar os dados antes de usá-los, ao contrário do tipo any, que é mais permissivo. Isso ajuda a evitar erros que podem ocorrer ao acessar propriedades ou métodos de um tipo que não corresponde ao que se esperava.
+
+Exemplo:
+
+````ts
+function processarDados(dados: unknown) {
+if (typeof dados === 'string') {
+
+console.log(dados.toUpperCase()); // Seguro, pois sabemos que é uma string
+
+} else {
+
+console.error('Dados não são uma string');
+
+}
+
+}
+````
+
+**Manipulação de Dados JSON**
+
+Quando você recebe dados em formato JSON, pode não saber ao certo como esses dados estão estruturados. Usar unknown permite que você faça uma validação antes de tentar acessar as propriedades.
+
+Exemplo:
+````ts
+function converterJSON(jsonString: string): unknown {
+return JSON.parse(jsonString);
+
+}
+
+const resultado = converterJSON('{"nome": "Maria"}');
+
+if (typeof resultado === 'object' && resultado !== null && 'nome' in resultado) {
+
+console.log((resultado as { nome: string }).nome); // Acessando com type assertion
+
+} else {
+
+console.error('Formato de JSON inválido');
+
+}
+
+````
+**Tratamento de Erros**
+
+Quando um erro é capturado em um bloco ``try/catch``, o erro é tipado como unknown. Isso significa que você deve verificar o tipo do erro antes de acessar suas propriedades, o que aumenta a segurança do seu código.
+
+Exemplo:
+````ts
+try {
+// Código que pode gerar um erro
+
+} catch (error: unknown) {
+
+if (error instanceof Error) {
+
+console.error(error.message); // Acessando a mensagem do erro
+
+} else {
+
+console.error('Erro desconhecido');
+
+}
+
+}
+
+````
+**Integração com APIs**
+
+Ao trabalhar com APIs, você pode receber dados que não têm uma estrutura fixa. O uso de ``unknown`` permite que você faça uma verificação rigorosa antes de manipular esses dados, garantindo que seu código funcione corretamente independentemente da estrutura dos dados recebidos.
+
+Exemplo:
+
+````ts
+async function buscarDados() {
+const resposta = await fetch('https://api.exemplo.com/dados');
+
+const dados: unknown = await resposta.json();
+
+if (typeof dados === 'object' && dados !== null && 'id' in dados) {
+
+console.log((dados as { id: number }).id); // Acessando com type assertion
+
+} else {
+
+console.error('Dados recebidos em formato inesperado');
+
+}
+
+}
+````
+**Conclusão**
+
+O tipo ``unknown`` é uma ferramenta poderosa para lidar com dados que não têm um tipo definido. Ele promove boas práticas de programação ao forçar a validação dos dados antes de serem utilizados, aumentando a segurança e a robustez do código.
 
 
 
