@@ -12,6 +12,9 @@
     - [Tuplas](#tuplas)
         - [Diferença entre tuplas e tipagem de objetos](#diferença-entre-tuplas-e-tipagem-de-objetos)
     - [Tipos de Conjuntos](#tipos-de-conjuntos)
+    - [Type Narrowing](#type-narrowing-estreitamento-de-tipos)
+    - [Type Assertion](#type-assertion)
+    - [Verificação de existência de propriedades em objetos](#verificação-de-existência-de-propriedades-em-objetos)
     
 
 
@@ -215,3 +218,171 @@ const usuarios: TUsuarioEndereco[] = [
 ```
 
 **Obs.:** Não é possível utilizá-lo para concatenar tipos diferentes para a mesma variável, parâmetro ou propriedade, pois vai retornar um erro dizendo que é impossível uma variável ter dois tipos de valores ao mesmo tempo.
+
+
+## Type Narrowing (Estreitamento de Tipos)
+
+O Type Narrowing é uma técnica útil no TypeScript que permite refinar o tipo de uma variável dentro de um bloco de código específico. Isso é particularmente útil quando se trabalha com tipos de união ou tipos mais amplos.
+
+Principais utilidades do Type Narrowing:
+
+1. **Segurança de tipos**: Ajuda a evitar erros em tempo de execução, garantindo que você esteja usando o tipo correto em um contexto específico.
+
+2. **Melhor IntelliSense**: O editor pode fornecer sugestões mais precisas baseadas no tipo refinado.
+
+3. **Código mais limpo**: Evita a necessidade de type assertions frequentes.
+
+4. **Lógica condicional mais clara**: Permite escrever código que se comporta de maneira diferente com base no tipo real de uma variável.
+
+Exemplo de Type Narrowing:
+
+```ts
+function soma(num1: number | string, num2: number | string){
+    if(typeof num1 === 'number' && typeof num2 === 'number'){
+        // return num1 + num2
+        console.log(typeof num1, typeof num2);
+          
+    }else if(typeof num1 === 'number' && typeof num2 ===     'string'){
+        console.log(typeof num1, typeof num2);
+        
+    }else if(typeof num1 === 'string' && typeof num2 ===     'number'){
+        console.log(typeof num1, typeof num2);
+    }else{
+        console.log(typeof num1, typeof num2);
+        
+    }  
+}
+
+soma('123', 123)
+```
+
+## Type Assertion
+
+A utilização de type assertion no TypeScript serve para informar ao compilador que uma variável deve ser tratada como um tipo específico. Esse recurso é útil em diversas situações, especialmente quando lidamos com dados que podem não ter um tipo bem definido.
+
+**Como o Type Assertion Ajuda no Código:** 
+
+**1 - Forçar Tipos:** Quando você tem uma variável que pode ser de um tipo mais genérico ou indefinido, o type assertion permite que você declare explicitamente qual tipo deseja que o compilador considere. Por exemplo, se você tem um objeto que pode ter uma propriedade opcional, você pode usar type assertion para garantir que o TypeScript trate essa propriedade como um tipo específico.
+
+**2 - Evitar Erros de Tipo:** Ao usar type assertion, você pode evitar erros de tipo que poderiam ocorrer durante a execução do código. Isso é especialmente útil quando você sabe que a variável terá um tipo específico em um determinado contexto, mas o compilador não consegue inferir isso.
+
+**3 - Interoperabilidade com APIs Externas:** Muitas vezes, ao trabalhar com dados de APIs externas, a estrutura dos dados pode não ser clara. O type assertion permite que você converta esses dados em tipos que você definiu, facilitando o trabalho com eles no seu código.
+
+Exemplo Prático
+
+Imagine que você tenha um objeto do tipo T-Pessoa, que possui uma propriedade opcional idade. Se você tentar acessar essa propriedade diretamente, pode ocorrer um erro se ela não estiver definida. Veja como utilizar type assertion:
+
+````ts
+type TPessoa = {
+    nome: string;
+    idade?: number; // idade é opcional
+};
+
+const guido: TPessoa = { nome: "Guido" };
+
+// Tentando passar guido.idade para uma função que espera um number
+function saudacao(nome: string, idade: number) {
+    console.log(`Olá, ${nome}. Você tem ${idade} anos.`);
+}
+
+// Aqui o TypeScript dará erro, pois idade pode ser undefined saudacao(guido.nome, guido.idade as number); // 
+````
+Forçando a idade a ser tratada como number
+No exemplo acima, usamos guido.idade as number para informar ao TypeScript que queremos tratar idade como um número, mesmo que ela possa ser undefined. No entanto, é importante ter certeza de que a propriedade realmente tem um valor, pois se idade for undefined, isso pode causar erros em tempo de execução.
+
+**Os riscos de usar type assertion no TypeScript incluem:**
+
+**1 - Erros em Tempo de Execução:** Quando você força o TypeScript a tratar um valor como um tipo específico, pode acabar com um erro em tempo de execução se o valor não for realmente desse tipo. Por exemplo, se você usar guido.idade as number e idade for undefined, isso pode causar um erro na aplicação.
+
+**2 - Perda da Segurança de Tipo:** O uso de type assertion pode levar à perda da segurança de tipo que o TypeScript oferece. Isso acontece porque o compilador não verifica se o valor realmente corresponde ao tipo que você está afirmando.
+
+**3 - Dificuldade na Manutenção do Código:** Se você usar type assertion de maneira excessiva, pode tornar o código mais difícil de entender e manter, já que outras pessoas (ou você mesmo no futuro) podem não saber se a asserção é realmente válida.
+
+**4 - Dependência de Dados Externos:** Muitas vezes, a necessidade de usar type assertion surge quando lidamos com dados de sistemas externos. Se esses dados não forem confiáveis, a asserção pode levar a comportamentos inesperados.
+
+**5 - Confusão com Tipos Complexos:** Quando se trabalha com tipos complexos, como objetos aninhados, usar type assertion pode criar confusão, especialmente se a estrutura do objeto não for bem definida ou documentada.
+
+**Considerações Finais**
+
+O uso de type assertion deve ser feito com cautela, pois pode levar a erros se não for utilizado corretamente. É recomendado usá-lo apenas quando você tem certeza de que o valor será do tipo esperado.
+
+
+## Verificação de Existência de Propriedades em Objetos
+
+Verificar a existência de uma propriedade dentro de um objeto no TypeScript é uma prática muito útil e traz diversas vantagens no desenvolvimento de aplicações. Aqui estão algumas utilidades práticas dessa verificação:
+
+**1. Evitar Erros em Tempo de Execução**
+
+Ao verificar se uma propriedade existe antes de acessá-la, você evita erros que podem ocorrer quando tenta acessar uma propriedade que não está definida. Isso é especialmente importante em situações em que os dados podem vir de fontes externas, como APIs.
+
+Exemplo:
+
+````ts
+const usuario = { nome: "Maria" };
+
+// Verificando se a propriedade 'idade' existe antes de acessá-la
+if ("idade" in usuario) {
+    console.log(`Idade: ${usuario.idade}`);
+} else {
+    console.log("A idade não está definida.");
+}
+````
+**2. Facilidade na Manipulação de Objetos Opcionais**
+
+Em muitos casos, as propriedades de um objeto podem ser opcionais. Verificar a existência dessas propriedades permite que você escreva código mais robusto e flexível.
+
+Exemplo:
+
+````ts
+type Usuario = {
+    nome: string;
+    idade?: number; // idade é opcional
+};
+
+const usuario: Usuario = { nome: "João" };
+
+// Verificando se a idade existe antes de usá-la
+if ("idade" in usuario) {
+    console.log(`Idade: ${usuario.idade}`);
+} else {
+    console.log("Idade não informada.");
+}
+````
+**3. Type Narrowing**
+
+A verificação da existência de uma propriedade pode ajudar no processo de type narrowing. Ao confirmar que uma propriedade existe, o TypeScript pode inferir que o tipo dessa propriedade é o esperado, permitindo operações seguras.
+
+Exemplo:
+
+````ts
+type Produto = {
+    nome: string;
+    preco?: number; // opcional
+};
+
+const produto: Produto = { nome: "Camiseta" };
+
+// Verificando a existência da propriedade 'preco'
+if ("preco" in produto) {
+    // Aqui, TypeScript sabe que 'preco' é um number
+    console.log(`Preço: ${produto.preco}`);
+}
+````
+**4. Melhorar a Legibilidade do Código**
+
+Verificações explícitas de propriedades ajudam a tornar o código mais claro e fácil de entender. Outros desenvolvedores que lerem seu código poderão compreender rapidamente quais propriedades são esperadas e como elas são usadas.
+
+**Conclusão**
+
+A verificação da existência de propriedades em objetos é uma prática recomendada em TypeScript, pois ajuda a evitar erros, facilita a manipulação de dados opcionais e melhora a legibilidade do código.
+
+
+
+
+
+
+
+
+
+
+
