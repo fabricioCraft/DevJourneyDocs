@@ -480,6 +480,190 @@ console.error('Dados recebidos em formato inesperado');
 
 O tipo ``unknown`` é uma ferramenta poderosa para lidar com dados que não têm um tipo definido. Ele promove boas práticas de programação ao forçar a validação dos dados antes de serem utilizados, aumentando a segurança e a robustez do código.
 
+# Tipos Utilitários
+
+Tipos utilitários são tipos nativos do typescript que permitem a trasformação de um tipo em outro.
+
+É útil quando você estiver trabalhando com um tipo e precisar criar outro tipo similar, mas com algumas pequenas modificações.
+
+## Partial<Tipo>
+
+Transforma todos os campos de um tipo em opcionais.
+
+Exemplo:
+
+```ts
+type Pessoa = {
+    nome: string
+    email: string
+    idade: number
+}
+
+function atualizarPessoa (pessoa: Partial<Pessoa>) {
+
+}
+
+atualizarPessoa({
+    nome: 'Fabricio',
+    idade: 33
+})
+
+// Todas as propriedades no tipo Pessoa são opcionais.
+```
+
+## Required<Tipo>
+
+Torna todas as propriedades de um tipo obrigatórias.
+
+Para usar é necessário passar o tipo como parâmetro.
+
+Exemplo:
+
+````ts
+type Pessoa = {
+    nome: string
+    email: string
+    idade: number
+}
+Required<Pessoa>
+
+// Todas as propriedades no tipo Pessoa são obrigatórias.
+````
+## Readonly<Tipo>
+
+Permite que os campos de um tipo sejam apenas leitura.
+
+Exemplo:
+```ts
+type Todo = {
+    titulo: string
+}
+
+const todo: Readonly<Todo> = {
+    titulo: 'Deletar usuários inativos'
+}
+
+todo.titulo = 'Olá'
+
+// O campo 'titulo' é somente leitura e por isso vai dar um erro quando você tenta alterar o valor.
+```
+
+## Pick<Tipo, Propriedades>
+
+Permite que você crie novos tipos somente com as propriedades que deseja utilizar.
+
+Exemplo:
+
+````ts
+type Usuario = {
+    nome: string
+    email: string
+    senha: string
+}
+
+type UsuarioSemSenha = Pick<Usuario, 'nome' | 'email'>
+````
+
+## Omit<Tipo, Propriedades>
+
+Permite que você crie novos tipos omitindo as propriedades que você não deseje utilizar.
+
+Exemplo:
+
+````ts
+type Usuario = {
+    nome: string
+    email: string
+    senha: string
+}
+
+type UsuarioSemSenha = Omit<Usuario, 'senha'>
+````
+## Record<Chave(s), Tipo>
+
+Permite que você crie tipos de um objeto de forma personalizável quando as propriedades são do mesmo tipo.
+
+Exemplo:
+
+````ts
+type Pessoa = Record<'nome' | 'email' | 'senha', string>
+````
+
+## Exclude<Tipo, Propriedades>
+
+Permite que você exclua propriedades de um tipo.
+
+É utilizado quando você tem uma união de tipos
+
+Exemplo:
+
+````ts
+type Transacao = 'Credito' | 'Debito' | 'Boleto' | 'Pix'
+
+type Banco1 = Exclude<Transacao, 'Credito'>
+type Banco2 = Exclude<Transacao, 'Boleto' | 'Pix'>
+````
+
+## Extract<Tipo, Propriedades>
+
+Permite que você extraia propriedades de uma união de tipos e mantenha apenas aquelas que desejar utilizar.
+
+
+Exemplo:
+
+````ts
+type Transacao = 'Credito' | 'Debito' | 'Boleto' | 'Pix'
+
+type Banco1 = Extract<Transacao, 'Debito' | 'Boleto' | 'Pix'>
+type Banco2 = Extract<Transacao, 'Credito' | 'Debito'>
+````
+
+## Tipos de Manipulação de Strings
+
+### Uppercase<Tipo>
+
+Transforma uma string em letras maiúsculas.
+
+Exemplo:
+
+````ts
+type TransacaoCredito = 'creDITO'
+type TransacaoDebito = 'dEbItO'
+
+type Transacao = Uppercase<TransacaoCredito> |Uppercase<TransacaoDebito>
+
+const tipo1: Transacao = 'CREDITO'
+````
+
+### Lowercase<Tipo>
+
+Transforma uma string em letras minúsculas.
+
+Exemplo:
+
+````ts
+type TransacaoCredito = 'creDITO'
+type TransacaoDebito = 'dEbItO'
+
+type Transacao2 = Lowercase<TransacaoCredito> | Lowercase<TransacaoDebito>
+
+const tipo2: Transacao2 = 'debito'
+````
+
+### Capitalize<Tipo>
+
+Transforma a primeira letra de uma string em maiúscula.
+
+Exemplo:
+
+````ts
+type TransacaoCredito = 'creDITO'
+type TransacaoDebito = 'dEbItO'
+
+type Transacao3 = Capitalize<TransacaoCredito> | Capitalize<TransacaoDebito>
+
+const tipo3: Transacao3 = 'Credito'
+````
 
 
 
