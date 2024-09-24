@@ -36,6 +36,15 @@
     - [Arrow Functions](#arrow-functions)
     - [Parâmetros da função](#parâmetros-da-função)
     - [Arrow Functions](#arrow-functions)
+- [Método de String](#método-de-string)
+    - [Trim](#trim)
+    - [TrimStart](#trimstart)
+    - [TrimEnd](#trimend)
+    - [toUpperCase e toLowerCase](#touppercase-e-tolowercase)
+    - [substring](#substring)
+    - [slice](#slice)
+
+
 
 
 
@@ -565,18 +574,81 @@ const nomeDaFuncao = (parametros) => {
 }
 ```
 
-# Loop While
+# Método de String
 
-O loop while é uma estrutura de repetição que executa um bloco de código enquanto uma condição for verdadeira.
+## Trim
 
-```ts
-let i = 0
-while (i < 10) {
-    console.log(i)
-}
-```
+O método `trim` remove todos os espac	os iniciais e finais de uma string.
+
+Para utilizá-lo é necessario armazená-lo em uma variável e passar a variável que deseja eliminar os espaços dentro do parenteses.
+
+Exemplo:
+
+`````js
+const string = '   Ola, mundo!   ';
+
+console.log(string) // Saída esperada':   Ola, mundo!   '
+
+console.log(string.trim()) // Saída esperada: 'Ola, mundo!'
+`````
+
+### trimStart
+
+Remove todos os espaços iniciais de uma string.
+
+### trimEnd
+
+Remove todos os espaços finais de uma string.
+
+## toUpperCase e toLowerCase
+
+O método `toUpperCase` converte uma string para maiúsculas e o `toLowerCase` converte uma string para minúsculas.
+
+Exemplo:
+
+````js
+const texto = 'bEM ViNdO, mUNdO'
+
+console.log(texto.toUpperCase()) // 'BEM VINDO, MUNDO'
+
+console.log(texto.toLowerCase()) // 'bem vindo, mundo'
+````
+## Substring
+
+O método `substring` retorna uma parte de uma string.
+
+Caso um índice seja negativo, o ``substring`` converterá o índice para zero.
+
+No caso do primeiro índice for maior do que o segundo, o ``substring`` muda a posição dos índices.
 
 
+Exemplo:
+
+````js
+const texto = 'Bem vindo, mundo'
+
+const parteDaString = texto.substring(4, 9)
+const parteDaString2 = texto.substring(texto.length - 5)
+
+console.log(parteDaString) //vindo
+console.log(parteDaString2) //mundo
+````
+
+## Slice
+
+O método `slice` retorna uma parte de uma string.
+
+A diferença do `slice` para o `substring` é o tratamento de índices negativos.
+
+O `slice` te permite utilizar índice negativo para selecionar uma parte da string e nesse caso ele começa a contagem do final da string para o início.
+
+Exemplo:
+
+````js
+const texto = 'Bem vindo, mundo'
+
+const parteDaString = texto.slice(-5, -1) // 'mund'
+````
 
 
 
