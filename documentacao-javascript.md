@@ -43,6 +43,10 @@
     - [toUpperCase e toLowerCase](#touppercase-e-tolowercase)
     - [substring](#substring)
     - [slice](#slice)
+    - [split](#split)
+    - [replace e replaceAll](#replace-e-replaceall)
+    - [padStart e padEnd](#padstart-e-padend)
+    - [indexOf e includes](#indexof-e-includes)
 
 
 
@@ -587,7 +591,8 @@ Exemplo:
 `````js
 const string = '   Ola, mundo!   ';
 
-console.log(string) // Saída esperada':   Ola, mundo!   '
+console.log(string) // Saída esperada:
+//'   Ola, mundo!   '
 
 console.log(string.trim()) // Saída esperada: 'Ola, mundo!'
 `````
@@ -648,6 +653,71 @@ Exemplo:
 const texto = 'Bem vindo, mundo'
 
 const parteDaString = texto.slice(-5, -1) // 'mund'
+````
+## Split
+
+O método ``split()`` divide uma String em um array de strings. A divisão é feita procurando um padrão, onde o padrão é fornecido como o primeiro parâmetro na chamada do método.
+
+Exemplo:
+
+````js
+const texto = 'Bem vindo, mundo'
+
+const parteDaString = texto.split(' ')
+
+console.log(parteDaString) // ['Bem', 'vindo,', 'mundo']
+````
+## Replace e ReplaceAll
+
+O método `replace` substitui uma string por outra. O método `replaceAll` substitui todas as ocorências de uma string por outra.
+
+Exemplo:
+
+````js
+const texto = 'Bem vindo, mundo. O mundo está belo hoje.'
+
+const parteDaString = texto.replace('mundo', 'planeta')
+
+console.log(parteDaString) // 'Bem vindo, planeta. O mundo está belo hoje'
+
+const parteDaString = texto.replaceAll('mundo', 'planeta')
+
+console.log(parteDaString) // 'Bem vindo, planeta. O planeta está belo hoje.'
+````
+## PadStart e PadEnd
+
+O método `padStart()` preenche a string no começo com um caractere ou string de substituição  e `padEnd()` será usado para preencher a string no final.
+
+Exemplo:
+
+````js
+const texto = 'Bem vindo, mundo. O mundo está belo hoje.'
+
+const parteDaString = texto.padStart(50, '.')
+
+console.log(parteDaString) // '.........Bem vindo, mundo. O mundo está belo hoje.'
+
+const parteDaString = texto.padEnd(50, '.')
+
+console.log(parteDaString) // 'Bem vindo, mundo. O mundo está belo hoje.........'
+````
+
+## indexOf e includes
+
+O método `indexOf` retorna o índice de um caractere ou string dentro de uma string. O método `includes` retorna um valor booleano que indica se um caractere ou string está dentro de uma string.
+
+Exemplo:
+
+````js
+const texto = 'Bem vindo, mundo. O mundo está belo hoje.'
+
+const parteDaString = texto.indexOf('mundo')
+
+console.log(parteDaString) // 11
+
+const parteDaString = texto.includes('mundo')
+
+console.log(parteDaString) // true
 ````
 
 
