@@ -47,12 +47,11 @@
     - [replace e replaceAll](#replace-e-replaceall)
     - [padStart e padEnd](#padstart-e-padend)
     - [indexOf e includes](#indexof-e-includes)
-
-
-
-
-
-
+- [Métodos de Array](#métodos-de-array)
+    - [push](#push)
+    - [pop](#pop)
+    - [shift](#shift)
+    - [unshift](#unshift)
 
 
 # Variáveis
@@ -578,7 +577,7 @@ const nomeDaFuncao = (parametros) => {
 }
 ```
 
-# Método de String
+# Métodos de String
 
 ## Trim
 
@@ -719,6 +718,88 @@ const parteDaString = texto.includes('mundo')
 
 console.log(parteDaString) // true
 ````
+# Métodos de array
 
+## push()
+
+O método `push()` adiciona um ou mais elementos ao final de um array e retorna o novo comprimento do array.
+
+A diferença da utilização do método `push()` para `array[array.length]` é que o `push()` te permite adicionar mais de um elemento ao mesmo tempo.
+
+Para retornar o tamanho do array utilizando o método `push()`, é necessário atribuir a uma variável.
+
+Exemplo:
+
+````js
+const array = [1, 2, 3, 4, 5]
+
+array.push(6, 7, 8)
+
+console.log(array) // [1, 2, 3, 4, 5, 6, 7, 8]
+
+const tamanhoArray = array.push(6,7,8)
+
+console.log(tamanhoArray) // 10
+````
+
+## pop()
+
+O método `pop()` remove e retorna o último elemento de um array.
+
+Para retornar o elemento removido, basta atribuir a uma variável.
+
+Exemplo:
+
+````js
+const array = [1, 2, 3, 4, 5]
+
+array.pop()
+
+console.log(array) // [1, 2, 3, 4]
+
+const elementoRemovido = array.pop()
+
+console.log(elementoRemovido) // 5
+````
+
+## shift()
+
+O método `shift()` remove e retorna o primeiro elemento de um array.
+
+Para retornar o elemento removido, basta atribuir a uma variável.
+
+Exemplo:
+
+````js
+const array = [1, 2, 3, 4, 5]
+
+array.shift()
+
+console.log(array) // [2, 3, 4, 5]
+
+const elementoRemovido = array.shift()
+
+console.log(elementoRemovido) // 1
+````
+
+## unshift()
+
+O método `unshift()` adiciona um ou mais elementos no comeco de um array e retorna o novo comprimento do array.
+
+Para retornar o tamanho do array utilizando o método `unshift()`, é necessário atribuir a uma variável.
+
+Exemplos:
+
+````js
+const array = [1, 2, 3, 4, 5]
+
+array.unshift(0)
+
+console.log(array) // [0, 1, 2, 3, 4, 5]
+
+const tamanhoArray = array.unshift(0)
+
+console.log(tamanhoArray) // 6
+````
 
 
