@@ -52,6 +52,12 @@
     - [pop](#pop)
     - [shift](#shift)
     - [unshift](#unshift)
+    - [indexOf](#indexof)
+    - [includes](#includes)
+    - [reverse](#reverse)
+    - [join](#join)
+    - [slice](#slice)
+    - [splice](#splice)
 
 
 # Variáveis
@@ -801,5 +807,99 @@ const tamanhoArray = array.unshift(0)
 
 console.log(tamanhoArray) // 6
 ````
+
+## indexOf()
+
+O método `indexOf()` retorna o índice de um elemento dentro de um array e retorna `-1` caso o elemento não esteja no array.
+
+É necessário tomar cuidado quando utilizá-lo com array de objetos, pois ele faz uma comparação entre os objetos tratando o objeto como novo e isso retorna `-1`, mesmo se o objeto tiver as mesmas propriedades e os mesmos valores.
+
+Exemplo:
+
+````js
+const array = [1, 2, 3, 4, 5]
+
+const indice = array.indexOf(3)
+
+console.log(indice) // 2
+````
+
+## includes()
+
+O método `includes()` retorna um valor booleano que retorna `true` se um elemento estiver no array e `false` caso contrário.
+
+É necessário tomar cuidado quando utilizá-lo com array de objetos, pois ele faz uma comparação entre os objetos tratando o objeto como novo e isso retorna `false`, mesmo se o objeto tiver as mesmas propriedades e os mesmos valores.
+
+Exemplo:
+
+````js
+const array = [1, 2, 3, 4, 5]
+
+const inclui = array.includes(3)
+
+console.log(inclui) // true
+````
+
+## reverse()
+
+O método `reverse()` inverte a ordem dos elementos de um array.
+
+Exemplo:
+
+````js
+const array = [1, 2, 3, 4, 5]
+
+array.reverse()
+
+console.log(array) // [5, 4, 3, 2, 1]
+````
+
+## join()
+
+O método `join()` junta todos os elementos de um array em uma string separados pelo caractere passado como parâmetro.
+
+Exemplo:
+
+````js
+const array = [1, 2, 3, 4, 5]
+
+const string = array.join('-')
+
+console.log(string) // 1-2-3-4-5
+````
+
+## slice()
+
+O método `slice()` seleciona uma parte de uma string e retorna uma nova string.
+
+Exemplo:
+
+````js
+const paises = ['Brasil', 'Argentina', 'Chile']
+
+const novoArray = paises.slice(1)
+
+console.log(novoArray) // ['Argentina', 'Chile']
+
+const novoArray = paises.slice(1, 3)
+
+console.log(novoArray) // ['Argentina', 'Chile']
+````
+
+## splice()
+
+O método `splice()` remove elementos do array e adiciona novos elementos no lugar do elemento removido.
+
+Exemplo:
+
+````js
+const paises = ['Brasil', 'Argentina', 'Chile']
+
+paises.splice(1, 1, 'Paraguai', 'Uruguai')
+
+console.log(paises) // ['Brasil', 'Paraguai', 'Uruguai', 'Chile']
+````
+
+
 
 
