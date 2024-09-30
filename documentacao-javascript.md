@@ -58,6 +58,8 @@
     - [join](#join)
     - [slice](#slice)
     - [splice](#splice)
+    - [every](#every)
+    - [some](#some)
 
 
 # Variáveis
@@ -540,6 +542,62 @@ function nomeDaFuncao(parametros) {
     // corpo da função
 }
 ```
+## setTimeout()
+
+O método `setTimeout()` executa uma função depois de um tempo especificado.
+
+O método recebe os parâmetros da função e o tempo em milissegundos como argumentos.
+
+O parâmetro da função, é passado sem os `()`, pois o objetivo não é executar a função imediatamente e sim após um tempo especificado.
+
+Também pode ser criada uma função dentro da função `setTimeout()`, nesse caso não é necessário passar o nome da função.
+
+A prática de chamar uma função dentro da outra é chamado de **callback functions**.
+
+Exemplo:
+
+```js
+function olaMundo (){
+    console.log("Ola mundo!");
+}
+
+setTimeout(olaMundo, 3000);
+
+setTimeout(function () {
+    console.log("Ola mundo!");
+}, 3000); 
+
+// A função será executada em 3 segundos.
+```
+
+## setInterval()
+
+O método `setInterval()` executa uma função em um intervalo de tempo especificado.
+
+O método recebe os parâmetros da função e o tempo em milissegundos como argumentos. 
+
+Para fazer com que a função pare de ser executada, o método `clearInterval()` deve ser chamado.
+
+Exemplo:
+
+```js
+let contador = 10 // inicia a contagem em 10
+const id = setInterval(() => {
+    // imprime a contagem
+    console.log(contador)
+    // diminui a contagem em 1 a cada intervalo especificado
+    contador-- 
+
+    // verifica se a contagem chegou a zero
+    if(contador === 0){
+        console.log(contador)
+        console.log('Boooooooooom!')
+        // interrompe a função
+        clearInterval(id)
+    }
+
+}, 1000) // Faz com que a função seja executada a cada 1 segundo
+```
 
 ## Parâmetros da função
 
@@ -899,6 +957,37 @@ paises.splice(1, 1, 'Paraguai', 'Uruguai')
 
 console.log(paises) // ['Brasil', 'Paraguai', 'Uruguai', 'Chile']
 ````
+## every()
+
+O método `every()` verifica cada item dentro do array e retorna `true` caso todos os itens sejam verdadeiros e `false` caso contrário a partir de uma condição especificada.
+
+O método `every()` recebe uma função como parâmetro.
+
+Exemplo:
+
+````js
+const array = [1, 2, 3, 4, 5]
+
+const todosPositivos = array.every((item) => item > 0)
+
+console.log(todosPositivos) // true
+````
+## some()
+
+O método `some()` verifica cada item dentro do array e retorna `true` caso pelo menos um item seja verdadeiro e `false` caso contrário a partir de uma condição especificada.
+
+O método `some()` recebe uma função como parâmetro.
+
+Exemplo:
+
+````js
+const array = [-1, -2, -3, 4, -5]
+
+const peloMenosUmPositivo = array.some((item) => item > 0)
+
+console.log(peloMenosUmPositivo) // true
+````
+
 
 
 
