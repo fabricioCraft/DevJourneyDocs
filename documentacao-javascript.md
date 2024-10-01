@@ -61,6 +61,10 @@
     - [splice](#splice)
     - [every](#every)
     - [some](#some)
+    - [find](#find)
+    - [findIndex](#findindex)
+    - [filter](#filter)
+    - [map](#map)
 
 
 # Variáveis
@@ -989,6 +993,84 @@ const peloMenosUmPositivo = array.some((item) => item > 0)
 console.log(peloMenosUmPositivo) // true
 ````
 
+## find()
+
+O método `find()` verifica cada item dentro do array e retorna o primeiro item que satisfaz a condição.
+
+O método `find()` recebe uma função como parâmetro.
+
+Exemplo:
+
+````js
+const array = [-1, -2, -3, -4, 5]
+
+const primeiroPositivo = array.find((item) => item > 0)
+
+console.log(primeiroPositivo) // 5
+````
+
+## findIndex()
+
+O método `findIndex()` verifica cada item dentro do array e retorna o índice do primeiro item que satisfaz a condição.
+
+O método `findIndex()` recebe uma função como parâmetro.
+
+Exemplo:
+
+````js
+const array = [-1, -2, -3, -4, 5]
+
+const primeiroPositivo = array.findIndex((item) => item > 0)
+
+console.log(primeiroPositivo) // 4
+````
+
+## filter()
+
+O método `filter()` verifica cada item dentro do array e retorna um novo array com os itens que satisfazem a condição.
+
+O método `filter()` recebe uma função como parâmetro.
+
+Exemplo:
+
+````js
+const array = [{
+    nome: 'João',
+    idade: 16
+}, {
+    nome: 'Maria',
+    idade: 30
+
+},
+{
+    nome: 'Pedro',
+    idade: 40
+},
+{
+    nome: 'Ana',
+    idade: 10
+}
+]
+
+const adultos = array.filter((item) => item.idade >= 18)
+
+console.log(adultos) // [{ nome: 'Maria', idade: 30 }, { nome: 'Pedro', idade: 40 }]
+````
+## map()
+
+O método `map()` verifica cada item dentro do array e retorna um novo array com os itens modificados.
+
+O método `map()` recebe uma função como parâmetro.
+
+Exemplo:
+
+````js
+const array = [1, 2, 3, 4, 5]
+
+const arrayModificado = array.map((item) => item * 2)
+
+console.log(arrayModificado) // [2, 4, 6, 8, 10]
+````
 
 
 
