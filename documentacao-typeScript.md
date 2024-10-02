@@ -16,6 +16,21 @@
     - [Type Assertion](#type-assertion)
     - [Verificação de existência de propriedades em objetos](#verificação-de-existência-de-propriedades-em-objetos)
     - [Tipo Unknown](#tipo-unknown)
+- [Tipos Utilitários](#tipos-utilitários)
+    - [Partial<Tipo>](#partial)
+    - [Required<Tipo>](#required)
+    - [Readonly<Tipo>](#readonly)
+    - [Pick<Tipo, Chaves>](#picktipo-propriedades)
+    - [Omit<Tipo, Chaves>](#omittipo-propriedades)
+    - [Record<Chaves, Tipo>](#recordchaves-tipo)
+    - [Exclude<Tipo, Chaves>](#excludetipo-propriedades)
+    - [Extract<Tipo, Chaves>](#extracttipo-propriedades)
+    - [Tipos de Manipulação de Strings](#tipos-de-manipulação-de-strings)
+        - [UpperCase](#uppercase)
+        - [LowerCase](#lowercase)
+        - [Capitalize](#capitalize)
+    
+        
     
 
 

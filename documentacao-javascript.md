@@ -1072,6 +1072,154 @@ const arrayModificado = array.map((item) => item * 2)
 console.log(arrayModificado) // [2, 4, 6, 8, 10]
 ````
 
+## sort()
 
+O método `sort()` ordena os itens de um array de acordo com o código unicode.
 
+Diferente de outros métodos, ele não cria um novo array, mas sim, modifica o array original.
 
+Para fazer a ordenação, ele faz a comparação entre dois argumentos e retorna um valor negativo, 0 ou positivo.
+
+Caso seu retorno seja negativo, o primeiro elemento é menor que o segundo e por isso vem antes.
+
+Caso seu retorno seja positivo, o primeiro elemento é maior que o segundo e por isso vem depois.
+
+Caso seu retorno seja 0, o primeiro elemento é igual ao segundo e por isso não há ordenação de posição. 
+
+Exemplo:
+
+````js
+const array = [25, 9, 50, 35, 11, 6, 10]
+
+// ordenação crescente
+array.sort((num1, num2) => {
+
+    if (num1 > num2) {
+        return 1
+    }
+
+    if (num1 < num2) {
+        return -1
+    }
+
+    return 0
+
+})
+
+//Ou ainda
+
+array.sort((num1, num2) => {
+    return num1 - num2
+    })
+
+console.log(array) // [6, 9, 10, 11, 25, 35, 50]
+
+// Todas as duas formas acima irão retornar o array ordenado de forma crescente
+
+// ordenação decrescente
+
+const array = [25, 9, 50, 35, 11, 6, 10]
+
+array.sort((num1, num2) => {
+
+    if (num1 > num2) {
+        return -1
+    }
+
+    if (num1 < num2) {
+        return 1
+    }
+
+    return 0
+
+})
+
+//Ou ainda
+
+array.sort((num1, num2) => {
+    return num2 - num1
+    })
+
+console.log(array) // [50, 35, 25, 11, 10, 9, 6]
+
+// Todas as duas formas acima irão retornar o array ordenado de forma decrescente
+````
+
+## Ordenação de strings
+
+Para ordenar uma string, além de utilizar o método `sort()`, é necessário utilizar também o método `localeCompare()`.
+
+O método `localeCompare()` faz uma comparação entre duas strings e retorna um valor negativo, 0 ou positivo.
+
+Assim como na ordenação de numerais, o método `localeCompare()` irá retornar um valor negativo, 0 ou positivo e fará a ordenação de acordo com seu retorno.
+
+Se negativo, o primeiro elemento vem antes, positivo o primeiro elemento vem depois e 0 se o primeiro elemento é igual ao segundo.
+
+Exemplo:
+
+````js
+const array = ['b', 'd', 'a', 'c', 'e']
+
+// ordenação crescente
+
+array.sort((a, b) => {
+    return a.localeCompare(b)
+})
+
+console.log(array) // ['a', 'b', 'c', 'd', 'e']
+
+// ordenação decrescente
+
+array.sort((a, b) => {
+    return b.localeCompare(a)
+})
+
+console.log(array) // ['e', 'd', 'c', 'b', 'a']
+````
+
+## Reduce()
+
+O método `reduce()` executa uma função callback e retorna um único valor.
+
+Ele recebe uma função como parâmetro e essa função recebe 4 argumentos:
+
+1. Acumulador
+2. Valor atual
+3. Índice
+4. Array
+
+Exemplo:
+
+````js
+
+const array = [1, 2, 3, 4, 5]
+
+const resultado = array.reduce((acumulador, valorAtual, indice, array) => {
+
+    return acumulador + valorAtual
+})
+
+console.log(resultado) // 15
+
+// A função acima retona a soma de todos os elementos do array
+````
+
+O método `reduce()` também pode receber um outro parâmetro que é opcional.
+
+Quando ele recebe esse parâmetro que é um número, ele se torna o ``acumulador`` da primeira iteração e o número da primeira posição do array o ``valor atual``.
+
+Exemplo:
+
+````js
+
+const array = [1, 2, 3, 4, 5]
+
+const resultado = array.reduce((acumulador, valorAtual, indice, array) => {
+
+    return acumulador + valorAtual
+}, 10)
+
+console.log(resultado) // 25
+
+// A função acima tem o número 10 como o primeiro acumulador e o valor 1 como valor atual na primeira iteração.
+````
