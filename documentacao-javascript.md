@@ -65,6 +65,8 @@
     - [findIndex](#findindex)
     - [filter](#filter)
     - [map](#map)
+- [Importação e Exportação de módulos](#importação-e-exportação-de-módulos)
+- [Exportação Individual com ES modules](#exportação-individual-com-es-modules)
 
 
 # Variáveis
@@ -1223,3 +1225,49 @@ console.log(resultado) // 25
 
 // A função acima tem o número 10 como o primeiro acumulador e o valor 1 como valor atual na primeira iteração.
 ````
+# Importação e exportação de módulos
+
+Para importar um módulo de um arquivo para ser utilizado em outro arquivo é necessário primeiro exportá-lo da seguinte maneira:
+
+````js
+
+function soma (num1, num2) {
+    return num1 + num2
+}
+
+const nome = 'Fabrício'
+
+module.exports = {
+    soma,
+    nome
+} // Exportação utilizando o commonJS 
+
+export {
+    soma,
+    nome
+} // Exportação utilizando o ES6
+````
+E depois importá-lo para o arquivo desejado:
+
+````js
+const {soma, nome} = require('./soma')
+import {soma, nome} from './soma.js'
+
+
+console.log(soma(1, 2)) // 3
+console.log(nome) // Fabrício
+````
+
+# Exportação individual com ES Modules
+
+Para exportar um módulo individualmente, basta utilizar o método `export` na linha de cima do módulo.
+
+````js
+export function soma (num1, num2) {
+    return num1 + num2
+}
+
+export const nome = 'Fabrício'
+````
+
+
