@@ -2,6 +2,8 @@
 
 - [Testes automatizados](#testes-automatizados)
 - [Agrupamento de testes](#agrupamento-de-testes)
+- [Configurando o Jest para uso do TypeScript](#configurando-o-jest-para-uso-do-typescript)
+- [Build do projeto](#build-do-projeto)
 
 # Testes automatizados
 
@@ -66,3 +68,63 @@ describe('Teste de soma', () => {
         expect(soma(3, 4)).not.toBe(8)
     })
 })
+```
+
+# Configurando o Jest para uso do TypeScript
+
+Para usar o jest para testar implementações de projetos escritos em typescript, basta instalar o pacote `ts-jest` no seu projeto:
+
+```bash
+npm install -D ts-jest
+```
+
+Entretanto para usar o jest em projetos escritos em typescript, é necessário iniciar o projeto com o argumento `jest@latest`.
+
+Ele irá criar um arquivo de configuração chamado `jest.config.js`.
+
+```bash
+npm init jest@latest
+```
+
+No arquivo de configuração, é necessário passar o argumento `ts-jest` para a chave `preset`.
+
+
+Depois, é necessário instalar o pacote `@types/jest` no seu projeto para que o Jest interprete typescript com `ts-jest`.
+
+```bash
+npm install -D @types/jest
+```
+Em seguida, é necessário instalar o pacote `@jest/globals` que permite utilizar funções globais como `describe`, `it`, `expect`, entre outras sem precisar importá-las manualmente em cada arquivo de teste.
+
+```bash
+npm install -D @jest/globals
+```
+# Build do projeto
+
+Ao finalizar o projeto, é necessário fazer o build do projeto, ou seja, fazer a transpilação dos arquivos `.ts` para `.js`.
+
+Para isso, é necessário configurar no arquivo `tsconfig.json` a pasta para onde serão guardados os projetos passando a chave `outDir` como `./dist`.
+
+```json
+{
+    "outDir": "./dist"
+}
+```
+Em seguida, é necessário criar um script no arquivo `package.json` com o nome `build` e passar como argumento `tsc` que é o comando que realiza a transpilação dos arquivos `.ts` para `.js`:
+
+```json
+{
+    "scripts": {
+        "build": "tsc"
+    }
+}
+```
+
+E então passar o comando na cli:
+
+```bash
+npm run build
+```
+
+
+
