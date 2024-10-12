@@ -1270,4 +1270,23 @@ export function soma (num1, num2) {
 export const nome = 'Fabrício'
 ````
 
+# Export default
+
+O ``export default`` te permite exportar um único valor por arquivo, que pode ser uma função, classe ou objeto.
+
+Ao importá-lo, você pode dar qualquer nome ao que está sendo importado, pois não está atrelado ao nome original.
+
+cada arquivo pode ter apenas um `export default`.
+
+````js
+// soma.js
+export default function soma(a, b) {
+    return a + b;
+}
+
+// index.js
+import minhaSoma from './soma.js';
+console.log(minhaSoma(2, 3)); // Saída: 5
+````
+
 
