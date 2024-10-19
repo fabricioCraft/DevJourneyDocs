@@ -67,6 +67,10 @@
     - [map](#map)
 - [Importação e Exportação de módulos](#importação-e-exportação-de-módulos)
 - [Exportação Individual com ES modules](#exportação-individual-com-es-modules)
+- [Export default](#export-default)
+- [Criando um servidor](#criando-servidor)
+ - [Com fastify](#com-fastify)
+ - [Com express](#com-express)
 
 
 # Variáveis
@@ -1288,5 +1292,56 @@ export default function soma(a, b) {
 import minhaSoma from './soma.js';
 console.log(minhaSoma(2, 3)); // Saída: 5
 ````
+# Criando servidor
+
+## Com fastify
+
+O primeiro passo para criar um servidor utilizando a biblioteca fastify é instalá-lo e importá-lo.
+
+Depois que o fastify tiver importado, é necessário instanciar o servidor, ou seja, inicializá-lo, da seguinte forma:
+
+````js
+import fastify from 'fastify'
+const app = fastify({
+    logger: true
+})
+````
+
+Agora, é necessário criar uma rota, um caminho para o qual o servidor responderá.
+
+A rota recebe dois parâmetros: o caminho e a função que será executada quando o caminho for acessado:
+
+````js
+app.get('/', (request, res) => {
+   const saudacao = 'Ola mundo!'
+
+   return res.send(saudacao) 
+})
+````
+
+Feito isso, é necessário passar a porta pela qual o servidor será executado e isso é feito com o método `listen()`.
+
+````js
+app.listen({
+    port: 3000
+})
+````
+
+# Com express
+
+````js
+import express from 'express'
+
+const app = express()
+
+app.get('/', (request, res) => {
+    const saudacao = 'Ola mundo!'
+
+    return res.send(saudacao)
+})
+
+ap.listen(3000)
+````
+
 
 
