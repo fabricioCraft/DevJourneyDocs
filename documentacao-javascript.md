@@ -75,6 +75,7 @@
  - [Parâmetros de rota](#parâmetros-de-rotas)
  - [Parâmetros de pesquisa](#parâmetros-de-pesquisa)
  - [Intermediários](#intermediários)
+ - [Intermediários gerais](#intermediários-gerais)
  - [Controladores](#controladores)
 
 
@@ -1443,6 +1444,38 @@ import { meuPrimeiroIntermediario } from './intermediarios'
 
 app.get('/produtos/:item', meuPrimeiroIntermediario ,itemProdutos)
 ````
+
+# Intermediários Gerais
+
+Os intermediários gerais são funções que são chamadas antes que o fluxo de requisição seja passado para o controlador.
+
+````js
+// intermediarios.ts
+
+import { NextFunction, Request, Response } from "express";
+
+export const intermediariosGerais = (req: Request, res: Response, next: NextFunction) => {
+    
+       console.log('Passou no intermediario geral');
+    
+    next()
+}
+
+// index.ts
+
+app.use(intermediarioGeral)
+
+app.get('/produtos/:item', meuPrimeiroIntermediario ,itemProdutos)
+
+app.get('/usuarios/:email', buscarUsuario)
+
+app.use(intermediarioGeral)
+
+app.get('/usuarios', buscarUsuarioQuery)
+
+````
+O intermediário geral fará a verificação para todas as rotas antes de acessá-la.
+
 
 # Controladores
 
