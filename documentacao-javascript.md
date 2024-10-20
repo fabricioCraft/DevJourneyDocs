@@ -71,6 +71,11 @@
 - [Criando um servidor](#criando-servidor)
  - [Com fastify](#com-fastify)
  - [Com express](#com-express)
+ - [Nodemon](#nodemon)
+ - [Parâmetros de rota](#parâmetros-de-rotas)
+ - [Parâmetros de pesquisa](#parâmetros-de-pesquisa)
+ - [Intermediários](#intermediários)
+ - [Controladores](#controladores)
 
 
 # Variáveis
@@ -1342,6 +1347,121 @@ app.get('/', (request, res) => {
 
 ap.listen(3000)
 ````
+# nodemon
 
+O nodemon é uma biblioteca que permite que o servidor seja executado automaticamente quando houver alterações em arquivos.
+
+Para usá-lo, é necessário primeiro instalar a biblioteca.
+
+````js
+npm install -D nodemon
+````
+Em seguida adicioná-lo a lista de scripts do arquivo `package.json`.
+
+Como o nodemon roda o node e o node não entende arquivos .ts, é necessário configurá-lo para que o nodemon execute o `ts-node` para que o node entenda arquivos .ts.
+````json
+
+"scripts": {
+
+    "dev": "nodemon --exec ts-node src/server.ts"    
+}
+````
+
+# Parâmetros de rotas
+
+Os parâmetros de rota são partes dinâmicas da URL que permitem criar rotas flexíveis em uma aplicação. 
+
+Eles são utilizados para passar informações através de uma URL e recuperá-las no servidor para processamento.
+
+````js
+// Exemplos de parâmetros de rota
+// Rota com parâmetro dinâmico
+app.get('/usuario/:id', (req, res) => {
+    const userId = req.params.id;
+    res.send(`ID do usuário: ${userId}`);
+});
+
+// Rota com parâmetros múltiplos
+app.get('/produto/:categoria/:id', (req, res) => {
+    const { categoria, id } = req.params;
+    res.send(`Categoria: ${categoria}, ID do produto: ${id}`);
+});
+````
+
+# Parâmetros de pesquisa
+
+Os parâmetros de pesquisa servem para filtrar resultados de uma pesquisa.
+
+````js
+// Rota com parâmetro de pesquisa
+app.get('/produtos', (req, res) => {
+    const { categoria } = req.query;
+    res.send(`Produtos da categoria: ${categoria}`);
+});  
+````
+
+
+# Intermediários
+
+Os intermediários são funções que podem ser chamadas antes que o fluxo de requisição seja passado para o próximo middleware ou para o controlador. 
+
+Eles são utilizados para:
+- Verificar se o usuário está autenticado
+- Verificar se o usuário tem permissão para acessar a rota
+- Adicionar propriedades ao objeto de requisição
+- Executar uma lógica de negócios
+
+Exemplo:
+
+````js
+// intermediarios.ts
+
+import { NextFunction, Request, Response } from "express";
+
+export const meuPrimeiroIntermediario = (req: Request, res: Response, next: NextFunction) => {
+    console.log('Passei pelo intermediário');
+
+    if(req.params.item === 'sair'){
+        res.send('A requisição foi respondida pelo intermediário, antes de chegar no controlador')
+        return
+    }
+    
+    next()
+}
+
+// contoladores.ts
+
+export const itemProdutos = (req: Request, res: Response) => {
+    console.log(req.params.item);        
+    res.send('Cheguei no controlador')
+}
+
+//index.ts
+import express, { NextFunction, Request, Response } from 'express'
+import {  itemProdutos } from './controladores'
+import { meuPrimeiroIntermediario } from './intermediarios'
+
+app.get('/produtos/:item', meuPrimeiroIntermediario ,itemProdutos)
+````
+
+# Controladores
+
+Os controladores são as rotas que serão processadas pelo servidor.
+
+````js
+// controladores.ts
+
+export const itemProdutos = (req: Request, res: Response) => {
+    console.log(req.params.item);        
+    res.send('Cheguei no controlador')
+}
+
+//index.ts
+import express, { Request, Response } from 'express'
+
+import { itemProdutos } from './controladores'
+
+app.get('/produtos/:item', itemProdutos)
+````
 
 
