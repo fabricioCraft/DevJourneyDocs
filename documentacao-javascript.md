@@ -1497,4 +1497,102 @@ import { itemProdutos } from './controladores'
 app.get('/produtos/:item', itemProdutos)
 ````
 
+# API REST
 
+API é um conjunto de instruções que determina como se comunicar com um sistema. Diversos sistemas disponibilizam API's para que sejam integradas com outros sistemas.
+
+REST (Representational State Transfer) é um conjunto de restrito de arquitetura que podem ser utilizadas para o desenvolvimento de APIs.
+
+Por exemplo, numa API de um sistema para um biblioteca, livro é um recurso e a listagem de livros é a coleção.
+
+A comunicação ocorre através de requisições e respostas, onde um cliente (por exemplo, um aplicativo) envia uma requisição ao servidor e recebe uma resposta. Essa interação é baseada no protocolo HTTP.
+
+APIs REST trabalham com recursos, que são entidades que o cliente pode manipular. Cada recurso possui um identificador único e é acessado através de endpoints.
+
+Esses dados de requisição e resposta podem ser representados no formato JSON.
+
+O JSON (Javascript Object Notation) é uma notação que utiliza uma estrutura de pares chave-valor, semelhante a um objeto JavaScript, e é amplamente usado para a troca de dados na web.
+
+Por exemplo, se tivermos um objeto representando um usuário, ele poderia ser estruturado da seguinte forma em JSON:
+
+````json
+{
+  "nome": "Pedro",
+  "email": "pedro@arrobaemail.com",
+  "idade": 30,
+  "curso": {
+    "nome": "Desenvolvimento Web",
+    "id": 1
+  },
+  "termosAceitos": true
+}
+````
+Neste exemplo, temos um objeto com várias propriedades, onde cada chave está entre aspas duplas e os valores podem ser strings, números, objetos ou booleanos. Essa estrutura é essencial para a comunicação entre cliente e servidor, especialmente ao enviar dados através de requisições.
+
+## Métodos HTTP
+
+As operações sobre os recursos são realizadas utilizando métodos HTTP, conhecidos como verbos. Os principais verbos incluem:
+
+**GET:** Para obter dados.
+
+**POST:** Para criar novos recursos.
+
+**PUT:** Para atualizar um recurso inteiro.
+
+**PATCH:** Para atualizar parcialmente um recurso.
+
+**DELETE:** Para remover um recurso.
+
+## Código de Resposta HTTP
+
+Em cada resposta de uma requisição HTTP, a API devolve um código numérico para informar o status do que foi solicitado na requisição.
+
+Uma requisição HTTP pode ser bem sucedida ou não, sendo assim, o código devolvido representa sucesso ou erro da requisição.
+
+**Principais grupos de códigos de resposta:**
+
+2xx - Sucesso
+
+    Indica que a requisição foi aceita e processada com sucesso.
+
+4xx - Erro do cliente
+
+    Indica que a requisição foi recebida, porém, possui erros.
+
+5xx - Erro do servidor
+
+    Indica que houve erro interno inesperado do servidor.
+
+**Principais códigos:**
+
+200 - OK
+
+    Requisição bem sucedida.
+
+201 - Created
+
+    Requisição bem sucedida e recurso criado.
+
+204 - No content
+
+    Requisição bem sucedida, sem conteúdo no corpo da resposta.
+
+400 - Bad request
+
+    O servidor não entendeu a requisição pois está com uma sintaxe inválida.
+
+401 - Unauthorized
+
+    O cliente não está autenticado.
+
+403 - Forbidden
+
+    O cliente não tem permissão para acessar o recurso solicitado.
+
+404 - Not found
+
+    O servidor não pode encontrar o recurso solicitado.
+
+500 - Internal server error
+
+    O servidor encontrou um erro inesperado.
