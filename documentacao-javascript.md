@@ -77,6 +77,9 @@
  - [Intermediários](#intermediários)
  - [Intermediários gerais](#intermediários-gerais)
  - [Controladores](#controladores)
+ - [API REST](#api-rest)
+ - [Métodos HTTP](#métodos-http)
+ = [Código de Resposta HTTP](#código-de-resposta-http)
 
 
 # Variáveis
@@ -1596,3 +1599,23 @@ Uma requisição HTTP pode ser bem sucedida ou não, sendo assim, o código devo
 500 - Internal server error
 
     O servidor encontrou um erro inesperado.
+
+# Programação Orientada a Objetos
+
+Programação Orientada a Objetos (POO) é uma abordagem de programação baseada em classes e métodos.
+
+Consiste em implementar estruturas que representam entidades do mundo real.
+
+Existem 4 pilares de POO:
+
+**Abstração:** Simplifica focaando nos aspectos essenciais da implementação.
+
+**Encapsulamento:** Protege os detalhes expondo apenas o necessário. 
+
+**Heranças:** Reutiliza estruturas de outras implementações.
+
+**Polimorfismo:** Permite que uma estrutura tenha diferentes comportamentos.
+
+## Classe
+
+Modelo a ser seguido para que um objeto seja criado.
