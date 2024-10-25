@@ -1671,3 +1671,53 @@ class Carro {
     }
 }
 ````	
+## Abstração
+
+A abstração é um conceito fundamental na programação orientada a objetos que permite simplificar a complexidade, focando apenas nos aspectos essenciais de um objeto.
+
+````js
+class ContaBancaria {
+  private saldo; 
+  private titular; // Variável privada, não acessível fora da classe
+
+  constructor(titular) {
+    this.titular = titular;
+    this.saldo = 0; // Saldo começa em zero
+  }
+
+  // Método para depositar dinheiro
+  depositar(valor) {
+    if (valor > 0) {
+      this.saldo += valor;
+      console.log(`Depósito de R$${valor} realizado.`);
+    } else {
+      console.log("Valor inválido para depósito.");
+    }
+  }
+
+  // Método para sacar dinheiro
+  sacar(valor) {
+    if (valor > 0 && valor <= this.saldo) {
+      this.saldo -= valor;
+      console.log(`Saque de R$${valor} realizado.`);
+    } else {
+      console.log("Saldo insuficiente ou valor inválido.");
+    }
+  }
+
+  // Método para exibir o saldo
+  exibirSaldo() {
+    console.log(`Saldo atual: R$${this.#saldo}`);
+  }
+}
+
+// Exemplo de uso
+const conta = new ContaBancaria("João");
+conta.depositar(1000);
+conta.sacar(300);
+conta.exibirSaldo(); // Saldo atual: R$700
+````
+
+## Encapsulamento
+
+Encapsulamento em JavaScript é uma técnica que ajuda a proteger e controlar o acesso aos dados de uma classe, limitando a exposição das propriedades e métodos apenas ao que é necessário. Essa prática ajuda a manter o código mais seguro, organizado e fácil de manter, evitando que partes externas possam modificar diretamente os dados internos de uma classe.
