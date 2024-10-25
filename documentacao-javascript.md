@@ -1618,4 +1618,56 @@ Existem 4 pilares de POO:
 
 ## Classe
 
-Modelo a ser seguido para que um objeto seja criado.
+Uma classe define a estrutura e o comportamento de um objeto. Ela serve como um molde para a criação de objetos.
+
+Uma classe pode ter atributos e métodos. Os atributos representam os dados do objeto e os métodos representam as ações que podem ser feitas com o objeto.
+
+Uma classe pode ter uma ou mais instâncias, que são objetos criados a partir da classe. Cada instância tem seus próprios valores para os atributos e os métodos podem ser chamados independentemente em cada instância.
+
+Classes podem ter heranças, o que permite que uma classe herde atributos e métodos de outra classe. Isso permite que as classes sejam reutilizadas e que as funcionalidades sejam estendidas.
+
+Exemplo:
+
+````js
+class Carro {
+    cor: string =''
+    marca: string=''
+    modelo: string=''
+    ano: number=0
+    potencia: number=0
+}
+
+const fusca = new Carro()
+
+fusca.ano = 1960
+console.log(fusca) // Carro { cor: '', marca: '', modelo: '', ano: 1960, potencia: 0 }
+````
+
+## Constructor
+
+Um construtor é um método especial dentro de uma classe que é executado automaticamente quando uma instância da classe é criada.
+
+O construtor tem o nome da classe e não tem um tipo de retorno explícito. Ele sempre retorna a instância da classe.
+
+O construtor é usado para inicializar os atributos da classe com valores padrão.
+
+Exemplo:
+
+````js
+class Carro {
+    cor: string =''
+    marca: string=''
+    modelo: string=''
+    ano: number=0
+    potencia: number=0
+
+    constructor(cor: string, marca: string, modelo: string, ano: number, potencia: number) {
+        this.cor = cor
+        this.marca = marca
+        this.modelo = modelo
+        this.ano = ano
+        this.potencia = potencia
+    
+    }
+}
+````	
