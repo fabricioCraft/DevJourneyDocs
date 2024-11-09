@@ -1721,3 +1721,153 @@ conta.exibirSaldo(); // Saldo atual: R$700
 ## Encapsulamento
 
 Encapsulamento em JavaScript é uma técnica que ajuda a proteger e controlar o acesso aos dados de uma classe, limitando a exposição das propriedades e métodos apenas ao que é necessário. Essa prática ajuda a manter o código mais seguro, organizado e fácil de manter, evitando que partes externas possam modificar diretamente os dados internos de uma classe.
+
+# Assincronismo
+
+## Síncrono e Assíncrono
+
+Em programação, temos dois tipos de processamentos: síncrono e assíncrono.
+
+**Síncrono:** Um processamento síncrono executa as operações sequencialmente, esperando que a operação anterior seja concluída antes de executar a próxima. Isso significa que o código espera a resposta do servidor antes de continuar.
+
+**Assíncrono:** Um processamento assíncrono executa as operações em paralelo, sem esperar que a operação anterior seja concluída. Isso significa que o código pode fazer outras coisas enquanto aguarda a resposta do servidor.
+## Async e Promises
+
+Em JavaScript, temos dois modos de trabalhar com processamentos assíncronos: `async/await` e `promises`.
+
+**Promises:** Uma Promise é um objeto que representa uma operação assíncrona. Uma Promise pode ter um dos seguintes estados:
+
+- **Pending** (pendente): estado inicial, quando a operação ainda não foi concluída.
+- **Fulfilled** (concluída): estado quando a operação foi concluída com sucesso.
+- **Rejected** (rejeitada): estado quando a operação falhou.
+
+**Async/Await:** Async/await é uma forma de trabalhar com promises de forma mais legível e fácil de entender. O `async` define uma função que retorna uma Promise, enquanto o `await` suspende a execução da função até que a Promise seja resolvida.
+
+````js
+// Exemplo usando Promises
+
+const promessaDeCompra = new Promise((resolve, reject) => {
+  const temDinheiro = true;
+  
+  if (temDinheiro) {
+    resolve("Compra realizada com sucesso!");
+  } else {
+    reject("Saldo insuficiente para compra.");
+  }
+});
+
+promessaDeCompra
+  .then((mensagem) => console.log(mensagem))
+  .catch((erro) => console.log(erro));
+
+// Exemplo usando Async/Await
+
+async function fazerCompra(valor) {
+  try {
+    const saldo = 1000;
+    
+    if (valor <= saldo) {
+      return "Compra realizada com sucesso!";
+    } else {
+      throw new Error("Saldo insuficiente");
+    }
+  } catch (erro) {
+    console.log(`Erro na compra: ${erro.message}`);
+  }
+}
+
+// Usando a função async
+
+async function executarCompra() {
+  const resultado = await fazerCompra(500);
+  console.log(resultado); // "Compra realizada com sucesso!"
+  
+  const resultadoErro = await fazerCompra(1500);
+  // Vai imprimir: "Erro na compra: Saldo insuficiente"
+}
+
+executarCompra();
+
+````
+### Capturando Promessas Rejeitadas
+
+Quando uma promessa é rejeitada (rejected), significa que ocorreu algum erro durante a execução da operação assíncrona. Para tratar esses erros, podemos usar:
+
+1. O método `.catch()` em Promises
+2. O bloco `try/catch` com async/await
+
+Exemplo:
+````js
+const minhaPromessa = new Promise((resolve, reject) => {
+  const operacaoComErro = true;
+  
+  if (operacaoComErro) {
+    reject("Algo deu errado!");
+  } else {
+    resolve("Operação bem sucedida!");
+  }
+});
+
+minhaPromessa
+  .then(resultado => console.log(resultado))
+  .catch(erro => console.log(`Erro capturado: ${erro}`));
+````
+# Manipulação de Arquivos
+
+## File System
+
+A biblioteca fs (File System) do Node.js é uma ferramenta nativa que permite a manipulação de arquivos de forma eficiente. Ela já vem instalada com o Node.js, o que significa que você pode começar a usá-la imediatamente em seus projetos. 
+
+
+Ela permite realizar diversas operações em arquivos, incluindo:
+
+- **Leitura de arquivos:** Você pode acessar o conteúdo de arquivos existentes.
+
+- **Escrita de arquivos:** É possível criar novos arquivos ou modificar arquivos existentes.
+
+- **Remoção de arquivos:** Você pode excluir arquivos do sistema.
+
+- **Renomeação de arquivos:** É possível alterar o nome de arquivos já existentes.
+
+
+A leitura de arquivos pode ser feita de duas maneiras: síncrona e assíncrona.
+
+**Leitura Síncrona**
+
+Para ler um arquivo de forma síncrona, você pode usar o método `fs.readFileSync()`. Esse método bloqueia a execução do código até que a leitura do arquivo seja concluída. Aqui está um exemplo:
+
+````js
+const fs = require('fs');
+
+// Lendo o arquivo de forma síncrona
+const data = fs.readFileSync('a.txt', 'utf8');
+console.log(data); // O conteúdo do arquivo será impresso aqui.
+
+````
+Neste exemplo, o código aguarda a leitura do arquivo a.txt antes de prosseguir.
+
+**Leitura Assíncrona**
+
+A leitura assíncrona é feita com o método `fs.readFile()`, que não bloqueia a execução do código. Em vez disso, você passa uma função callback que será chamada quando a leitura for concluída. Veja um exemplo:
+
+````js
+const fs = require('fs');
+
+// Lendo o arquivo de forma assíncrona
+fs.readFile('a.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err); // Captura e exibe erros, se houver
+        return;
+    }
+    console.log(data); // O conteúdo do arquivo será impresso aqui.
+});
+````
+Nesse caso, enquanto o arquivo está sendo lido, o código pode continuar executando outras operações.
+
+**Tratamento de Erros**
+
+É importante sempre tratar erros ao lidar com arquivos. Se você tentar ler um arquivo que não existe, por exemplo, o Node.js retornará um erro. No exemplo acima, o erro é capturado e exibido no console.
+
+**Buffers**
+
+Quando você lê um arquivo, o Node.js retorna um "buffer", que é uma área de memória que armazena dados binários do arquivo. Esses dados podem ser convertidos para strings ou outros formatos, dependendo de como você deseja utilizá-los. Por exemplo, se um arquivo contém a palavra "teste", o buffer desse arquivo será uma sequência de números que representam esses dados binários.
