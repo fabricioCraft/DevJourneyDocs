@@ -79,7 +79,23 @@
  - [Controladores](#controladores)
  - [API REST](#api-rest)
  - [Métodos HTTP](#métodos-http)
- = [Código de Resposta HTTP](#código-de-resposta-http)
+ - [Código de Resposta HTTP](#código-de-resposta-http)
+ - [Programação Orientada a Objetos](#programação-orientada-a-objetos)
+    - [Classe](#classe)
+    - [Constructor](#constructor)
+    - [Abstração](#abstração)
+    - [Encapsulamento](#encapsulamento)
+- [Assincronismo](#assincronismo)
+    - [Síncrono e Assíncrono](#síncrono-e-assíncrono)
+    - [Async e Promises](#async-e-promises)
+    - [Capturando Promessas rejeitadas](#capturando-promessas-rejeitadas)
+-[Manipulação de arquivos](#manipulação-de-arquivos)
+    -[File System](#file-system)
+    -[Persistindo dados em um arquivo Json](#persistindo-dados-em-um-arquivo-json)
+    
+    
+
+
 
 
 # Variáveis
@@ -1731,6 +1747,7 @@ Em programação, temos dois tipos de processamentos: síncrono e assíncrono.
 **Síncrono:** Um processamento síncrono executa as operações sequencialmente, esperando que a operação anterior seja concluída antes de executar a próxima. Isso significa que o código espera a resposta do servidor antes de continuar.
 
 **Assíncrono:** Um processamento assíncrono executa as operações em paralelo, sem esperar que a operação anterior seja concluída. Isso significa que o código pode fazer outras coisas enquanto aguarda a resposta do servidor.
+
 ## Async e Promises
 
 Em JavaScript, temos dois modos de trabalhar com processamentos assíncronos: `async/await` e `promises`.
@@ -1871,3 +1888,37 @@ Nesse caso, enquanto o arquivo está sendo lido, o código pode continuar execut
 **Buffers**
 
 Quando você lê um arquivo, o Node.js retorna um "buffer", que é uma área de memória que armazena dados binários do arquivo. Esses dados podem ser convertidos para strings ou outros formatos, dependendo de como você deseja utilizá-los. Por exemplo, se um arquivo contém a palavra "teste", o buffer desse arquivo será uma sequência de números que representam esses dados binários.
+
+## Persistindo dados em um arquivo Json
+
+Persistir dados significa armazenar informações de forma que elas possam ser recuperadas e utilizadas posteriormente, mesmo após o encerramento da aplicação ou reinício do servidor. Isso é fundamental para garantir que os dados não se percam entre as execuções do programa.
+
+Para persistir dados em um arquivo `JSON`, você deve:
+
+1 - Implemente uma função que utiliza o módulo `fs` do Node.js. Essa função deve ler o conteúdo do arquivo `JSON` e convertê-lo em um objeto JavaScript usando `JSON.parse`.
+
+2 - Crie uma função que lê os dados existentes, adiciona novos dados ao array e escreve o resultado de volta no arquivo `JSON` com `fs.writeFile`. Utilize `JSON.stringify` para formatar os dados antes de salvá-los.
+
+Exemplo:
+
+````js
+const fs = require('fs').promises;
+async function lerDados() {
+
+const data = await fs.readFile('bancodedados.json', 'utf-8');
+
+return JSON.parse(data);
+
+}
+
+async function adicionarDados(novoDado) {
+
+const dados = await lerDados();
+
+dados.push(novoDado);
+
+await fs.writeFile('bancodedados.json', JSON.stringify(dados, null, 2));
+
+}
+
+
