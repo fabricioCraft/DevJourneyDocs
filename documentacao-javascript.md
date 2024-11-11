@@ -85,7 +85,9 @@
     - [Constructor](#constructor)
     - [Abstração](#abstração)
     - [Encapsulamento](#encapsulamento)
-    
+    -[Interfaces](#interfaces)
+    -[Herança](#herança)
+    -[Polimorfismo](#polimorfismo)
 - [Assincronismo](#assincronismo)
     - [Síncrono e Assíncrono](#síncrono-e-assíncrono)
     - [Async e Promises](#async-e-promises)
@@ -1838,7 +1840,45 @@ Exemplo:
     console.log(programador.linguagens); // ["JavaScript", "TypeScript"]
     ````
 
+## Polimorfismo
 
+o polimorfismo permite que subclasses (classes filhas) implementem um método que já existe na superclasse (classe pai) com a mesma assinatura (nome, tipo de retorno e parâmetros), mas com comportamentos diferentes. Isso significa que, ao chamar um método, o resultado pode variar dependendo da instância da classe que está sendo utilizada.
+
+Imagina que você tem um controle de videogame que funciona para diferentes tipos de console: PlayStation, Xbox, e até o Nintendo. Cada console responde de um jeito diferente quando você aperta um botão. Mas, pra você, só importa apertar o botão e fazer o personagem pular, atirar ou correr, certo?
+
+O polimorfismo no JavaScript é um pouco assim. Ele permite que a gente use um mesmo "botão" — ou no caso, uma mesma função — e que ela funcione de formas diferentes dependendo do "console" em que está sendo usada, que nesse caso são objetos diferentes.
+
+Por exemplo, você poderia ter uma função chamada fazerSom para animais. Se você usar essa função com um cachorro, ele vai latir. Se usar com um gato, ele vai miar. E assim por diante.
+
+Exemplo:
+
+````js
+class Animal {
+  fazerSom() {
+    console.log("Som de animal!");
+  }
+}
+
+class Cachorro extends Animal {
+  fazerSom() {
+    console.log("Au au!");
+  }
+}
+
+class Gato extends Animal {
+  fazerSom() {
+    console.log("Miau!");
+  }
+}
+
+const meuCachorro = new Cachorro();
+const meuGato = new Gato();
+
+meuCachorro.fazerSom(); // Vai exibir: Au au!
+meuGato.fazerSom();     // Vai exibir: Miau!
+
+
+````
 # Assincronismo
 
 ## Síncrono e Assíncrono
@@ -2021,6 +2061,49 @@ dados.push(novoDado);
 await fs.writeFile('bancodedados.json', JSON.stringify(dados, null, 2));
 
 }
+````
+# Tratamento de Erros
+
+## Try/Catch
+
+O bloco `try/catch` em JavaScript é uma estrutura fundamental para o tratamento de erros em seu código. Ele serve para capturar e gerenciar exceções que podem ocorrer durante a execução de um programa.
+
+Exemplo:
+
+````js
+try {
+    // Tentar ler um arquivo
+    let data = fs.readFileSync('arquivo.txt', 'utf8');
+    console.log(data);
+} catch (error) {
+    // Captura o erro e exibe uma mensagem
+    console.error("Erro ao ler o arquivo:", error.message);
+} finally {
+    // Este bloco sempre será executado
+    console.log("Tentativa de leitura concluída.");
+}
+````
+
+## Throw
+
+O `throw` em JavaScript serve para lançar erros manualmente, permitindo que você crie exceções que podem ser tratadas em outras partes do seu código.
+
+Exemplo:
+
+````js
+try {
+    // Tentar ler um arquivo
+    let data = fs.readFileSync('arquivo.txt', 'utf8');
+    console.log(data);
+} catch (error) {
+    // Captura o erro e exibe uma mensagem
+    console.error("Erro ao ler o arquivo:", error.message);
+} finally {
+    // Este bloco sempre será executado
+    console.log("Tentativa de leitura concluida.");
+}
+````
+
 
 
 
