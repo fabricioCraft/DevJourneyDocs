@@ -85,6 +85,7 @@
     - [Constructor](#constructor)
     - [Abstração](#abstração)
     - [Encapsulamento](#encapsulamento)
+    
 - [Assincronismo](#assincronismo)
     - [Síncrono e Assíncrono](#síncrono-e-assíncrono)
     - [Async e Promises](#async-e-promises)
@@ -1738,6 +1739,106 @@ conta.exibirSaldo(); // Saldo atual: R$700
 
 Encapsulamento em JavaScript é uma técnica que ajuda a proteger e controlar o acesso aos dados de uma classe, limitando a exposição das propriedades e métodos apenas ao que é necessário. Essa prática ajuda a manter o código mais seguro, organizado e fácil de manter, evitando que partes externas possam modificar diretamente os dados internos de uma classe.
 
+## Interfaces
+
+Uma interface define a estrutura de um objeto, mas não define o comportamento. Ela serve para definir o que um objeto deve ter e como ele deve ser usado.
+
+**Regras de implementação:**
+
+- Uma `interface` pode ser implementada por uma classe, mas não pode ser instanciada.
+
+- Uma `interface` não pode ter implementações, apenas assinaturas de atributos e métodos.
+
+- Uma `interface` pode ser usada para definir tipos no TypeScript, assim como o `type`, entretanto, a `interface` é uma implementação do paradigma de programação orientada a objetos e o `type` é uma implementação do TypeScript com a finalidade de apenas criar tipos customizados.
+
+## Herança
+
+A herança em programação orientada a objetos é um conceito fundamental que permite criar novas classes a partir de classes existentes, facilitando a reutilização de código e a organização do sistema.
+
+**Regras de implementação:**
+
+- Cada sublcasse pode ter seus métodos e atributos específicos, além dos métodos e atributos herdados.
+
+- Uma subclasse só consegue acessar métodos e atributos da superclasse caso sejam públicos ou protegidos, mas não privados.
+
+- Um método ou atributo protegido só pode ser acessado dentro da própria classe ou em uma subclasse que a herda.
+
+Exemplo:
+
+1. Classe Base (Superclasse):
+
+    Criamos uma classe chamada Funcionario, que contém atributos comuns a todos os funcionários, como nome e salario.
+
+    ````js
+    class Funcionario {
+        constructor(public nome: string, public salario: number) {}
+
+    }
+    ````
+2. Subclasse:
+
+    A partir da classe Funcionario, podemos criar subclasses específicas, como Gerente, Vendedor e Programador. Cada uma dessas subclasses herda os atributos da superclasse e pode adicionar seus próprios atributos e métodos.
+
+    ````js
+    class Gerente extends Funcionario {
+    constructor(nome: string, salario: number, public senha: string) {
+
+    super(nome, salario); // Chama o construtor da superclasse
+
+    }
+
+    validarSenha(senha: string): boolean {
+
+    return this.senha === senha;
+
+    }
+
+    }
+
+    class Vendedor extends Funcionario {
+
+    constructor(nome: string, salario: number, public comissao: number) {
+
+    super(nome, salario);
+
+    }
+
+    calcularSalarioCompleto(): number {
+
+    return this.salario + this.comissao;
+
+    }
+
+    }
+
+    class Programador extends Funcionario {
+
+    constructor(nome: string, salario: number, public linguagens: string[]) {
+
+    super(nome, salario);
+
+    }
+
+    }
+
+3. Instaciação:
+
+    Agora podemos criar instâncias dessas subclasses e utilizar suas características específicas.
+
+    ````js
+    const gerente = new Gerente("Alice", 5000, "senha123");
+    console.log(gerente.validarSenha("senha123")); // true
+
+    const vendedor = new Vendedor("Bob", 3000, 500);
+
+    console.log(vendedor.calcularSalarioCompleto()); // 3500
+
+    const programador = new Programador("Charlie", 4000, ["JavaScript", "TypeScript"]);
+
+    console.log(programador.linguagens); // ["JavaScript", "TypeScript"]
+    ````
+
+
 # Assincronismo
 
 ## Síncrono e Assíncrono
@@ -1920,5 +2021,7 @@ dados.push(novoDado);
 await fs.writeFile('bancodedados.json', JSON.stringify(dados, null, 2));
 
 }
+
+
 
 
